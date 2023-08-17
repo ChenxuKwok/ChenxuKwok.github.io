@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>C-primer_chpt5-7</title>
+      <title>C++_Primer_Plus(CHPT 5-7)</title>
       <link href="/2023/08/17/C-primer-chpt5-7/"/>
       <url>/2023/08/17/C-primer-chpt5-7/</url>
       
@@ -124,9 +124,9 @@
     
     
     <entry>
-      <title>友情链接</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -135,9 +135,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>友情链接</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
