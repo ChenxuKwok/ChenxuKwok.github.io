@@ -1,0 +1,695 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据结构与算法分析 | 南宸</title><meta name="author" content="Louis Kwok"><meta name="copyright" content="Louis Kwok"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 引论 本课程讨论的内容 写出一个可以工作的程序并不够。如果这个程序在巨大的数据集上进行，那么运行时间就变成了重要的问题。 数学知识复习  指数  \[ X^AX^B&#x3D;X^{A+B}\\ \frac{X^A}{X^B}&#x3D;X^{A-B}\\ (X^A)^B&#x3D;X^{AB}\\ 2^N+2^N&#x3D;2^{N+1} \]  对数  在计算机科学中，除非有特殊的说明，所有对数都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法分析">
+<meta property="og:url" content="http://example.com/2023/08/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="南宸">
+<meta property="og:description" content="第一章 引论 本课程讨论的内容 写出一个可以工作的程序并不够。如果这个程序在巨大的数据集上进行，那么运行时间就变成了重要的问题。 数学知识复习  指数  \[ X^AX^B&#x3D;X^{A+B}\\ \frac{X^A}{X^B}&#x3D;X^{A-B}\\ (X^A)^B&#x3D;X^{AB}\\ 2^N+2^N&#x3D;2^{N+1} \]  对数  在计算机科学中，除非有特殊的说明，所有对数都">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/imgs/Avatar.png">
+<meta property="article:published_time" content="2023-08-21T12:14:46.000Z">
+<meta property="article:modified_time" content="2023-08-28T14:35:00.479Z">
+<meta property="article:author" content="Louis Kwok">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/imgs/Avatar.png"><link rel="shortcut icon" href="/imgs/nav.png"><link rel="canonical" href="http://example.com/2023/08/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据结构与算法分析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-28 22:35:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/gitcalendar/css/gitcalendar.css"/><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/imgs/Avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="南宸"><img class="site-icon" src="/imgs/nav.png"/><span class="site-name">南宸</span></a></span><div id="he-plugin-simple"></div><div id="none_space"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据结构与算法分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-21T12:14:46.000Z" title="发表于 2023-08-21 20:14:46">2023-08-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-28T14:35:00.479Z" title="更新于 2023-08-28 22:35:00">2023-08-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/computerScience/">computerScience</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据结构与算法分析"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第一章-引论">第一章 引论</h1>
+<h2 id="本课程讨论的内容">本课程讨论的内容</h2>
+<p><strong>写出一个可以工作的程序并不够。如果这个程序在巨大的数据集上进行，那么运行时间就变成了重要的问题。</strong></p>
+<h2 id="数学知识复习">数学知识复习</h2>
+<ul>
+<li><strong>指数</strong></li>
+</ul>
+<p><span class="math display">\[
+X^AX^B=X^{A+B}\\ \frac{X^A}{X^B}=X^{A-B}\\ (X^A)^B=X^{AB}\\
+2^N+2^N=2^{N+1}
+\]</span></p>
+<ul>
+<li><strong>对数</strong></li>
+</ul>
+<p>在计算机科学中，除非有特殊的说明，所有对数都是以2为底的。</p>
+<p>定义：<span class="math inline">\(X^A=B\)</span>，当且仅当<span
+class="math inline">\(\log_XB=A\)</span></p>
+<p>由此得到几个方便的等式： <span class="math display">\[
+\log_AB = \frac{\log_CB}{\log_CA}\ (C&gt;0)\\ \log AB=\log A+\log B\\
+\log\frac{A}{B}=\log A-\log B\\ \log(A^B)=B\log A\\ \log X&lt;
+X(对所有的 X&gt;0都成立)
+\]</span></p>
+<ul>
+<li><strong>级数</strong></li>
+</ul>
+<p><span class="math display">\[
+\sum_{i=0}^{N}{A^i}\ =\ \frac{A^{N+1}-1}{A-1}
+\]</span></p>
+<ul>
+<li><strong>模运算</strong></li>
+</ul>
+<p>如果<span class="math inline">\(N\)</span>整除<span
+class="math inline">\(A-B\)</span>，那么我们就说<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(B\)</span>模<span
+class="math inline">\(N\)</span>同余，记作<span
+class="math inline">\(A\equiv B(mod\ N)\)</span>。满足运算性质：若<span
+class="math inline">\(A\equiv B(mod\ N)\)</span>，则<span
+class="math inline">\(A+C\equiv B+C(mod\ N)\)</span>，以及<span
+class="math inline">\(AD\equiv BD(mod\ N)\)</span>。</p>
+<p>（<strong>定理1.3</strong>） <span class="math display">\[
+如果\ N\geq1，则\sum_{i=1}^{N}{i^2}=\frac{N(N+1)(N+2)}{6}
+\]</span></p>
+<h1 id="第二章-算法分析">第二章 算法分析</h1>
+<p>讨论内容：</p>
+<ul>
+<li>如果估计一个程序所需要的时间</li>
+<li>如何将一个程序的运行时间从天或年降低到秒</li>
+<li>粗心使用递归的后果</li>
+<li>将一个数自乘得到其幂以及计算两个数的最大公因数的非常有效的算法</li>
+</ul>
+<h2 id="数学基础">数学基础</h2>
+<p>全书将使用下面四个定义：</p>
+<p><strong>定义</strong>：如果存在正常数 <span
+class="math inline">\(c\)</span> 和 <span
+class="math inline">\(n_0\)</span> 使得当 <span
+class="math inline">\(N\ge n_0\)</span> 时 <span
+class="math inline">\(T(N) \le cf(N)\)</span>，则记作 <span
+class="math inline">\(T(N)=O(f(N))\)</span>。</p>
+<p><strong>定义</strong>：如果存在正常数 <span
+class="math inline">\(c\)</span> 和 <span
+class="math inline">\(n_0\)</span> 使得当 <span
+class="math inline">\(N\ge n_0\)</span> 时 <span
+class="math inline">\(T(N) \ge cg(N)\)</span>，则记作 <span
+class="math inline">\(T(N)=\Omega(f(N))\)</span>。</p>
+<p><strong>定义</strong>：<span
+class="math inline">\(T(N)=\Theta(h(N))\)</span>，当且仅当 <span
+class="math inline">\(T(N)=O(h(N))\)</span> 且 <span
+class="math inline">\(T(N)=\Omega(h(N))\)</span>。</p>
+<p><strong>定义</strong>：如果 <span
+class="math inline">\(T(N)=O(p(N))\)</span> 且 <span
+class="math inline">\(T(N)\ne\Theta(p(N))\)</span>，则 <span
+class="math inline">\(T(N)=o(p(N))\)</span>。</p>
+<p>我们需要掌握的重要结论有：</p>
+<p><strong>法则1</strong>：</p>
+<p>如果 <span class="math inline">\(T_1(N)=O(f(N))\)</span> 且 <span
+class="math inline">\(T_2(N)=O(g(N))\)</span>，那么</p>
+<p>(a)<span class="math inline">\(T_1(N)+T_2(N)=max( O(f(N)),
+O(g(N)))\)</span>，</p>
+<p>(b)<span
+class="math inline">\(T_1(N)*T_2(N)=O(f(N)*g(N))\)</span>。</p>
+<p><strong>法则2</strong>：</p>
+<p>如果 <span class="math inline">\(T(N)\)</span> 是一个 <em>k</em>
+次多项式，则 <span class="math inline">\(T(N) =
+\Theta(N^k)\)</span>。</p>
+<p><strong>法则3</strong></p>
+<p>对于任意常数 <em>k</em>，<span
+class="math inline">\(\log^kN=O(N)\)</span>。它告诉我们对数增长十分缓慢。</p>
+<h2 id="模型">模型</h2>
+<p>为了在正式的框架中分析算法，我们需要一个计算模型。我们的模型是一台标准的计算机，可以执行一些标准的指令，比如加法、乘法、比较和赋值。但不同于真实情况的是，模型机做任何一件简单的工作都恰好消耗一个时间单元。为了合理期间，我们假设模型有固定范围的整数并且不存在诸如矩阵求逆或排序等运算。我们还假设模型机有无限的内存。</p>
+<h3 id="要分析的问题">要分析的问题</h3>
+<p>要分析的最重要的资源一般来说就是运行时间。我们主要考虑 <span
+class="math inline">\(T_{worst}\)</span>，因为很难界定什么是“平均”，导致分析
+<span class="math inline">\(T_{avg}\)</span> 十分困难。</p>
+<p>下面考虑一个问题：<strong>最大的子序列和问题</strong></p>
+<p>给定整数 <span class="math inline">\(A_1, A_2, \cdots,
+A_N\)</span>，求 <span class="math inline">\(\sum_{k=i}^jA_k\)</span>
+的最大值（为了方便起见，如果所有整数都为负数，则最大子序列和为 0）。</p>
+<h3 id="一般法则">一般法则</h3>
+<p><strong>法则1——FOR循环</strong></p>
+<p>一次for循环的运行时间至多是该for循环内语句（包括循环条件的测试）的运行时间乘以迭代的次数。</p>
+<p><strong>法则2——嵌套的for循环</strong></p>
+<p>从里向外分析这些循环。在一组嵌套循环内部的一条语句总的运行时间为该语句运行时间乘以该组所有for循环的大小乘积</p>
+<p><strong>法则3——顺序语句</strong></p>
+<p>将各个语句的运行时间求和即可，这意味着，其中的最大值就是所得的运行时间。</p>
+<p><strong>法则4——IF/ELSE语句</strong></p>
+<p>对于程序片段</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(Condition)</span><br><span class="line">    S1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    S2</span><br></pre></td></tr></table></figure>
+<p>一个if/else语句的运行时间从不超过判断再加上 S1 和 S2
+中运行时间长者的总的运行时间。</p>
+<p>显然某些情形下这么估计有些过高，但绝不会过低。分析的基本策略都是从内向外展开的。如果有函数调用，那么首先应该分析这些调用。如果有递归，那么存在几种选择：</p>
+<ol type="1">
+<li>本质是for循环</li>
+</ol>
+<p>比如下面求阶乘的算法，其运行时间为 <span
+class="math inline">\(O(N)\)</span>。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="type">int</span> <span class="title function_">Factorial</span><span class="params">( <span class="type">int</span> n )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( n &lt;= <span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> n * Factorial( n<span class="number">-1</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个例子中使用递归并不好。当正常使用递归时，将其转化为一个简单的循环结构是相当困难的。在这种情况下，分析将涉及一个<strong>递推关系</strong>。我们看下面这个程序：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="type">int</span> <span class="title function_">Fib</span><span class="params">( <span class="type">int</span> n )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( n &lt;=<span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Fib( n - <span class="number">1</span> ) + Fib( n - <span class="number">2</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码看起来十分简洁，但是当它处理的数据变大时，这个程序效率很低。分析十分简单：令
+<em>T(n)</em> 为函数 <em>Fib(n)</em> 的运行时间。如果 n=0 或
+n=1，那么运行时间是一个常数值。这个常数具体是多少并不重要，我们记它为1。此时，我们在
+<span class="math inline">\(n \ge 2\)</span>
+时，我们可以得到这样的递推关系式 <span class="math display">\[
+T(n) = T(n-1) + T(n-2)
+\]</span> 这里的2指的是第3行的工作加上第6行的加法。</p>
+<p>我们知道了 <span class="math inline">\(Fib(n) \le T(n)\)</span>
+这样，<em>T(n)</em>
+的增长速度要比斐波那契数列更快，也就造成了其低得吓人的效率。</p>
+<p>为什么会这么慢呢？因为在第6行的第一次调用即 <em>Fib(n-1)</em>
+实际上计算了
+<em>Fib(n-2)</em>。这个信息被抛弃了而在第6行第二次调用时再次计算。<strong>抛弃的信息量递归地合成起来并导致巨大的运行时间</strong>。这也许就是格言“<strong>计算任何事情不要超过一次</strong>”的最好实例，但它不应该让你被吓得原理递归而不敢使用，之后我们会看到优秀的例子。</p>
+<h3 id="最大子序列和问题的解">最大子序列和问题的解</h3>
+<p>现在我们将要叙述四个算法来求解<a
+href="###要分析的问题">早前的问题</a>。</p>
+<p><strong>方法一：枚举</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">MaxSubsequenceSum</span><span class="params">( <span class="type">const</span> <span class="type">int</span> A[], <span class="type">int</span> N )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> thisSum, maxSum, i, j, k;</span><br><span class="line">    maxSum = <span class="number">0</span>;								</span><br><span class="line">    <span class="keyword">for</span>( i = <span class="number">0</span>; i &lt; N; i++)					</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>( j = <span class="number">1</span>; j &lt; N; j++)				</span><br><span class="line">        &#123;</span><br><span class="line">            thisSum = <span class="number">0</span>;					</span><br><span class="line">            <span class="keyword">for</span>( k = i; k &lt;= j; k++)		</span><br><span class="line">                thisSum += A[k];			</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>( thisSum &gt; maxSum )	</span><br><span class="line">                maxSum = thisSum;			</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;							</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>容易得到这个算法的运行时间是 <span
+class="math inline">\(O(N^3)\)</span>，这里的分析比较简单，不再赘述。</p>
+<p><strong>方法二：方法一简单改进</strong></p>
+<p>通过观察 <span class="math inline">\(\sum_{k=i}^j{A_k} = A_j +
+\sum_{k=i}^{j-1}{A_k}\)</span> 可以发现算法 1 的第 5 行和第 6
+行过于耗时了，我们对此作出改进：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">MaxSubsequenceSum</span><span class="params">( <span class="type">const</span> <span class="type">int</span> A[], <span class="type">int</span> N )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> thisSum, maxSum, i, j;</span><br><span class="line">    maxSum = <span class="number">0</span>;								</span><br><span class="line">    <span class="keyword">for</span>( i = <span class="number">0</span>; i &lt; N; i++)					</span><br><span class="line">    &#123;</span><br><span class="line">        thisSum = <span class="number">0</span>;						</span><br><span class="line">        <span class="keyword">for</span>( j = <span class="number">1</span>; j &lt; N; j++)				</span><br><span class="line">        &#123;</span><br><span class="line">            thisSum += A[j];				</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>( thisSum &gt; maxSum )			</span><br><span class="line">                maxSum = thisSum;			</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;							</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个算法的运行时间是 <span
+class="math inline">\(O(N^2)\)</span>，分析方法也十分简单，不再赘述。</p>
+<p><strong>方法3：分而治之</strong></p>
+<p>这里采用“分治(divide-and-conquer)”策略。其想法是把问题分成两个大致相等的子问题，然后<strong>递归</strong>地对它们求解，这是“分”的步骤。“治”阶段则会将两个子问题的解合到一起并可能再做些少量的附加工作，最后得到整个问题的解。</p>
+<p>我们的例子中，最大子序列可能在三处出现：左半部分、右半部分或者跨越输入数据的中部而占据左右两半部分。前两种情况都可以通过递归求解，第三种情况可以通过求出前半部分的最大和（包含前半部分的最后一个元素）以及后半部分的最大和（包含后半部分的第一个元素）而得到。然后将这两个和加在一起。作为一个例子，考虑下列输入：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">-3</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">-2</th>
+<th style="text-align: center;">-1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">6</th>
+<th style="text-align: center;">-2</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>前半部分最大子列和为6，后半部分最大子列和为8，横跨分界线的最大子列和是11。于是，最后的结果是11。听起来很妙，我们来想想怎么用算法来描述。首先，递归过程调用的一般形式是数组以及其左右边界，这样就知道要处理哪些数组了。单行驱动程序通过传递数组以及边界0和N-1而启动该过程。下面我们尝试写出这种算法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">maxSubSum</span><span class="params">( <span class="type">const</span> <span class="type">int</span> A[], <span class="type">int</span> left, <span class="type">int</span> right )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> maxLeftSum, maxRightSum;</span><br><span class="line">    <span class="type">int</span> maxLeftBorderSum, maxRightBorderSum;</span><br><span class="line">    <span class="type">int</span> leftBorderSum, rightBorderSum;</span><br><span class="line">    <span class="type">int</span> center, i;</span><br><span class="line">	<span class="keyword">if</span>( left == right )																</span><br><span class="line">        <span class="keyword">if</span>( A[ left ] &gt; <span class="number">0</span> )</span><br><span class="line">            <span class="keyword">return</span> A[ left ];</span><br><span class="line">    	<span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    center = ( left + right ) / <span class="number">2</span>;</span><br><span class="line">    maxLeftSum = maxSubSum( A, left, center );</span><br><span class="line">    maxRightSum = maxSubSum( A, center + <span class="number">1</span>, right );</span><br><span class="line">    </span><br><span class="line">    maxLeftBorderSum = <span class="number">0</span>, leftBorderSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( i = center; i &gt;= left; i-- )</span><br><span class="line">    &#123;</span><br><span class="line">        leftBorderSum += A[ i ];</span><br><span class="line">        <span class="keyword">if</span>( leftBorderSum &gt; maxLeftBorderSum )</span><br><span class="line">            maxLeftBorderSum = leftBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    maxRightBorderSum = <span class="number">0</span>, rightBorderSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( i = center + <span class="number">1</span>; i &lt;= right; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        rightBorderSum += A[ i ];</span><br><span class="line">        <span class="keyword">if</span>( rightBorderSum &gt; maxRightBorderSum )</span><br><span class="line">            maxRightBorderSum = rightBorderSum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max3( maxLeftsum, maxRightSum, </span><br><span class="line">                maxLeftBorderSum + maxRightBorderSum );</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">maxSubsequenceSum</span><span class="params">( <span class="type">const</span> <span class="type">int</span> A[], <span class="type">int</span> n )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> maxSumsum( A, <span class="number">0</span>, n<span class="number">-1</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>书中有很多对此部分的具体讲解，这里不再赘述。值得补充的是，只要从头到尾把这些代码敲一遍，一定可以获得很大的收获。</p>
+<p>下面我们尝试分析这种算法的时间复杂度，这里与斐波那契数列类似。令 T(N)
+是求解大小为 N 的最大子序列和问题所花费的时间。如果 N =
+1，那么从第7行到第11行所需要的时间是某个常量，我们记作一个时间单位。于是，T(1)
+= 1。随后，第 13 行到第 14 行运行时间为 T(N/2)，第 17 行到第 22 行与第
+25 行到 27 行类似，都是 <span
+class="math inline">\(O(\frac{N}2)\)</span> 即 <span
+class="math inline">\(O(N)\)</span>。故有递推关系： <span
+class="math display">\[
+T(N) = 2T(\frac{N}2) + O(N)
+\]</span> 根据上面的结果进行放缩： <span class="math display">\[
+O(N)\le N\\
+T(N)\le 2T(\frac{N}2) + N
+\]</span> 因此，可以使用 N 来表示 <span
+class="math inline">\(O(N)\)</span>，而结果不变。因此我们继续假设 <span
+class="math inline">\(N=2^k\)</span>，此时可以得到： <span
+class="math display">\[
+T(1)=1\\
+T(2)=2+2=4\\
+T(4)=2*4+4=4*3=12\\
+T(8)=2*12+8=8*4=32\\\
+\dots \\
+T(N)=N*(k+1)=N*(\log N + 1)=O(N\ \log N)
+\]</span> 至此，我们得到了其时间复杂度，这里假设 N 是 2 的 k
+次幂。但是大 O 的结果是不变的。</p>
+<p><strong>方法四：在线扫描（联机算法，on-line algorithm）</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">maxSubsequenceSum</span><span class="params">( <span class="type">const</span> <span class="type">int</span> A[], <span class="type">int</span> n )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> thisSum, maxSum, j;</span><br><span class="line">    thisSum = maxSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( j = <span class="number">0</span>; j &lt; n; j++ )</span><br><span class="line">    &#123;</span><br><span class="line">        thisSum += A[ j ];</span><br><span class="line">        <span class="keyword">if</span>( thisSum &gt; maxSum )</span><br><span class="line">            maxSum - thisSum;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>( thisSum &lt; <span class="number">0</span> )</span><br><span class="line">            thisSum = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运行时间中的对数">运行时间中的对数</h3>
+<p>分析算法最混乱的方面大概集中在对数上。除了分治算法之外，可以将对数最常出现的规律概括为以下一般法则：如果一个算法用常数时间将问题的大小削减为其一部分（通常是
+1/2），那么该算法就是 <span class="math inline">\(O(\log
+N)\)</span>。另一方面，如果使用常数时间只是把该问题减少一个常数，那么这种算法就是
+<span class="math inline">\(O(N)\)</span>的。</p>
+<p>显然，只有一些特殊的问题才能呈现出 O(<span class="math inline">\(\log
+N\)</span>)型。例如，如输入 N 个数字，则一个算法只是把这些数据读入就耗费
+<span class="math inline">\(\Omega(N)\)</span>
+的时间量。因此，我们讨论这类问题时，一般都假设输入数据已经提前被读入。下面是具有对数特点的三个例子：</p>
+<p><strong>对分查找</strong></p>
+<p>想必耳熟能详，不再赘述。</p>
+<p><strong>欧几里得算法</strong></p>
+<p>这里有一个显而易见但十分重要的公式： <span class="math display">\[
+如果 M\ge N，则 M\ mod\ N&gt; M/2.
+\]</span> 具体内容就是辗转相除法，只要上过高中，应该都知道。</p>
+<p><strong>幂运算</strong></p>
+<p>这里比较有启发，着重记录一下。</p>
+<p>计算 <span class="math inline">\(X^N\)</span>
+的常见也是最容易想到的就是 N-1 次自乘。但是下面的算法更好：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="type">int</span> <span class="title function_">Pow</span><span class="params">( <span class="type">long</span> <span class="type">int</span> X, <span class="type">unsigned</span> <span class="type">int</span> N)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( N == <span class="number">0</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>( N == <span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> X;</span><br><span class="line">    <span class="keyword">if</span>( isEven( N ) )</span><br><span class="line">        <span class="keyword">return</span> Pow( X * X, N / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Pow( X * X, N / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若 N 是偶数，我们有 <span class="math inline">\(X^N = X^{N/2}\cdot
+X^{N/2}\)</span>，如果 N 是奇数，那么 <span
+class="math inline">\(X^N=X^{(N-1)/2}\cdot X^{(N-1)/2}\cdot
+X\)</span>。</p>
+<p>例如，不如先想一想，计算 <span class="math inline">\(X^{62}\)</span>
+需要运算几次乘法呢？ <span class="math display">\[
+X^{62}=(X^{31})^2,X^{31}=(X^{15})^2\cdot X,X^{15}=(X^7)^2\cdot
+X,X^7=(X^3)^2\cdot X,X^3=(X^2)\cdot X,X^2=X\cdot X
+\]</span> 是的，仅仅需要 9 次乘法就可以算出来 <span
+class="math inline">\(X^{62}\)</span>。</p>
+<h1 id="第三章-表栈和队列">第三章 表、栈和队列</h1>
+<p>讨论内容：</p>
+<ul>
+<li>介绍抽象数据类型的概念</li>
+<li>阐述如何对表进行有关的操作</li>
+<li>介绍栈 ADT 及其在实现递归中的作用</li>
+<li>介绍队列 ADT 及其在操作系统和算法设计中的应用。</li>
+</ul>
+<h2 id="抽象数据类型">抽象数据类型</h2>
+<p><strong>什么是数据类型？</strong></p>
+<p>数据对象集+数据集相关联的操作集</p>
+<p><strong>什么是抽象？</strong></p>
+<ul>
+<li>与机器无关</li>
+<li>与存储的物理结构无关</li>
+<li>与算法或语言无关</li>
+</ul>
+<h2 id="表-adt">表 ADT</h2>
+<p>我们将处理一般的形如 <span
+class="math inline">\(A_1,A_2,A_3,\cdots,A_N\)</span>
+的表。一般的，我们称表的大小是 N。大小为 0 的表为空表。</p>
+<p>之后是要对表进行的操作的集合。<em>printList</em> 和
+<em>makeEmpty</em> 是最常用的操作，其功能显而易见；<em>find</em>
+返回关键字首次出现的位置；<em>insert</em> 和 <em>delete</em>
+一般是从表的某个位置插入或删除某个关键字；而 <em>findKth</em>
+则返回某个位置上（作为参数被指定）的元素。</p>
+<h3 id="表的简单数组实现">表的简单数组实现</h3>
+<p>对于表的所有操作都可以通过数组来实现。但是传统数组的局限性太大，如一开始就要指定数组大小，而且插入和删除的花费十分的昂贵。我们一般不使用简单数组来实现这种结构。</p>
+<h3 id="链表">链表</h3>
+<p>为了避免插入和删除的线性开销，我们需要允许表可以不连续存储，否则表的部分或全部就需要整体移动。</p>
+<figure>
+<img src="/imgs/b904bdd6d9c1787fd2ac888c8d6a0ee8.jpeg" alt="单链表" />
+<figcaption aria-hidden="true">单链表</figcaption>
+</figure>
+<div data-align="center">
+图 3-1
+</div>
+<p>链表由一系列不必在内存中连续的结构组成。每一个结构都含有表元素和指向该元素后的结构指针。我们称之为
+next 指针。最后一个单元的 next 指针指向 NULL；该值由 C
+定义且不能与其他指针混淆。ASCI C 规定 NULL 为零。</p>
+<p>链表在查找时会比简单数组稍慢一点，但好在这个界比较保守。</p>
+<p>删除命令可以通过修改一个指针来实现。</p>
+<figure>
+<img src="/imgs/9f8bae0bdbeba9ba320f6a2c5d365f5.jpg"
+alt="从链表中删除" />
+<figcaption aria-hidden="true">从链表中删除</figcaption>
+</figure>
+<div data-align="center">
+图 3-2
+</div>
+<p>插入命令需要使用一次 malloc
+调用从系统得到一个新单元并在此后进行两次指针调整。</p>
+<figure>
+<img src="/imgs/380cc1aaa125645c2e8fe1a683c0b3a.jpg" alt="向链表插入" />
+<figcaption aria-hidden="true">向链表插入</figcaption>
+</figure>
+<div data-align="center">
+图 3-3
+</div>
+<h3 id="程序设计细节">程序设计细节</h3>
+<p>上面的描述足以使每一部分都能正常工作。但还是存在以下三个问题：</p>
+<ul>
+<li>并不存在从所给定义出发在表的前面插入元素的真正显性的方法。</li>
+<li>从表的前面实行删除是一个特殊情况，因为它改变了表的起始端。</li>
+<li>删除算法要求我们记住被删除元素前面的元素。</li>
+</ul>
+<p>实际上，只要稍作改变就可以解决这三个问题。我们将留出一个标志结点，有时称之为表头（header）或者哑结点（dummy
+node）。这是一种通常的习惯，在之后会经常看到。我们约定，表头在位置 0
+处。</p>
+<figure>
+<img src="/imgs/ac9e38e74e69e83468fb77bcb7b423b.jpg"
+alt="有header的链表" />
+<figcaption aria-hidden="true">有header的链表</figcaption>
+</figure>
+<div data-align="center">
+图 3-4
+</div>
+<p>为避免删除操作相关的一系列问题，我们需要编写
+<em>findPrevious</em>，它将返回我们要删除的前驱元的位置。如果使用表头，那么当我们删除表的第一个元素，<em>findPrevious</em>
+将返回表头的位置。有人不支持使用头结点，所以在此强调要不要使用表头则是属于个人兴趣问题。</p>
+<p>接下来要开始写一堆的函数来实现刚才提到的功能了。按照 C
+的约定，作为类型的 List（表）和 Position（位置）以及函数的原型都在 .h
+头文件中。具体 Node 声明则在 .c 中。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">ptrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> ptrToNode List;</span><br><span class="line"><span class="keyword">typedef</span> ptrToNode Position;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    elementType element;</span><br><span class="line">    Position Next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们编写的第一个函数是测试空表的。当我们编写涉及指针的任意数据结构代码时，最要总是要先画出一张图来。下面的图就表示空表：</p>
+<figure>
+<img src="/imgs/abe5790e9e5197c1d8891e5d4fef2fa.jpg"
+alt="带表头的空表" />
+<figcaption aria-hidden="true">带表头的空表</figcaption>
+</figure>
+<div data-align="center">
+图 3-5
+</div>
+<p>根据这个很容易写出代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">isEmpty</span><span class="params">( List L )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> L-&gt;Next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的函数用来测试当前元素是否是最后一个元素：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">isLast</span><span class="params">( Positon P, List L)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> P-&gt;Next == <span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">// P 指的是当前指针的位置，L 是整个链表 header</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面来编写
+<em>Find</em>。它返回某个元素在表中的位置。有些程序员觉得递归写
+<em>Find</em>
+很不错，但实际上这是一个糟糕的想法，我们要不惜一切代价避免它。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Position <span class="title function_">Find</span><span class="params">( elementType X, List L )</span></span><br><span class="line">&#123;</span><br><span class="line">    Positon P;</span><br><span class="line">    P = L-&gt;List;</span><br><span class="line">    <span class="keyword">while</span>( P != <span class="literal">NULL</span> &amp;&amp; P-&gt;element != X )</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    <span class="keyword">return</span> P;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第四个程序该写删除表 L 的某个元素 X 了。我们需要决定，如果 X
+出现不止一次或者根本就没有，我们该怎么办？下面的程序将删除第一次出现的
+X，如果 X 不在表中我们就什么也不做。为此，我们调用 <em>findPrevious</em>
+函数找出含有 X 的表元的前驱元 P。实现删除的过程在上面的图 3-2
+中表示过：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">delete</span><span class="params">( elementType X, List L )</span></span><br><span class="line">&#123;</span><br><span class="line">    Positon P, tmpCell;</span><br><span class="line">    </span><br><span class="line">    P = findPrevious( X, L );</span><br><span class="line">    <span class="keyword">if</span>( !isLast( P, L ) )</span><br><span class="line">    &#123;</span><br><span class="line">        tmpCell = P-&gt;Next;</span><br><span class="line">        P-&gt;Next = tempCell-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>( tmpCell );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相应的 <em>findPrevious</em> 函数在这里：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Positon <span class="title function_">findPrevious</span><span class="params">( elementType X, List L )</span></span><br><span class="line">&#123;</span><br><span class="line">    Positon P;</span><br><span class="line">    </span><br><span class="line">    P = L;</span><br><span class="line">    <span class="keyword">while</span>( P-&gt; Next != <span class="literal">NULL</span> &amp;&amp; P-&gt;Next-&gt;Element != X)</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> P;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们要写的最后一个程序是插入。要将插入的元素与表 L 和位置 P
+一起传入。这个 <em>insert</em> 程序将一个元素插入到由 P
+所指示的位置之后。我们这个决定有随意性，它意味着插入操作如何实现没有完全确定的规则。很有可能将新元素插入到位置
+P 处（即在位置 P 处当时元素的前面），但是这么做需要知道位置
+P前面是什么元素。它可以通过调用 <em>findPrevious</em>
+而得到。因此重要的是要说明你在干什么。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">insert</span><span class="params">( elementType X, List L, Position P )</span></span><br><span class="line">&#123;</span><br><span class="line">    Position tmpCell;</span><br><span class="line">    </span><br><span class="line">    tmpCell = <span class="built_in">malloc</span>( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> Node ) );</span><br><span class="line">    <span class="keyword">if</span>( tmpCell = <span class="literal">NULL</span> )</span><br><span class="line">        FatalError(<span class="string">&quot;Out of space!!!&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    tmpCell-&gt;element = X;</span><br><span class="line">    tmpCell-&gt;Next = P-&gt;Next;</span><br><span class="line">    P-&gt;Next = tmpCell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/fd46ebb0c28a4d4fc081df69047dfac.jpg" alt="简单示意图" style="zoom:33%;" /></p>
+<div data-align="center">
+图 3-6
+</div>
+<p>注意，我们已经把表 L 传递给 <em>insert</em> 和 <em>islast</em>
+程序，尽管它从未被使用过。之所以这么没做，是因为别的实现方法可能会需要这些信息。</p>
+<h3 id="常见的错误">常见的错误</h3>
+<p><strong>memory access violation</strong> 和 <strong>segmentation
+violation</strong></p>
+<p>这种信息表示指针变量包含了伪地址。一个通常的原因是初始化变量失败。不论何时当需要确定指向的时候，就需要保证该指针不是
+NULL。</p>
+<p><strong>何时使用 malloc</strong></p>
+<p>声明指向一个结构的指针并不创建该结构，只是给出足够的空间容纳结构可能会使用的地址。创建未被声明过的记录的唯一方法是使用
+malloc 库函数。malloc
+可以使系统创建一个新的结构并返回指向该结构的指针。另一方面，要是使用一个指针沿着表前进，就不需要创建新的结构了，也就不需要
+malloc 命令。当有些空间不需要时，可以用 free 命令收回，free(P)
+的结果是：P 指向的地址没变，但其中的数据已经没有定义了。</p>
+<p>如果从未删除过一个链表，那么调用 malloc 的次数就应该是链表的长度，有
+header 的话再加 1。</p>
+<p>在删除链表的一个节点之后，通常要将该单元释放。下面展示了将一个表删除的正确方法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">deleteList</span><span class="params">( List L )</span></span><br><span class="line">&#123;</span><br><span class="line">    Positon P, Tmp;</span><br><span class="line">    </span><br><span class="line">    P = L-&gt;Next;</span><br><span class="line">    L-&gt;Next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span>( P != <span class="literal">NULL</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        Tmp = P-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>( P );</span><br><span class="line">        P = Tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双链表">双链表</h3>
+<p>有时候倒序扫描链表很方便。所以只需要在数据结构加入一个域，使其指向前一个单元即可。</p>
+<figure>
+<img src="/../blog/source/imgs/9c96dbce16b1ae062a7333dd4cc0b69.jpg"
+alt="双链表" />
+<figcaption aria-hidden="true">双链表</figcaption>
+</figure>
+<div data-align="center">
+图 3-7
+</div>
+<h3 id="循环链表">循环链表</h3>
+<p>让最后的一个单元反过来指向表头是一种流行的做法。</p>
+<figure>
+<img
+src="/../blog/source/imgs/14c711e31826af31e88e07f2834fb23-1692691198609-3.jpg"
+alt="循环链表" />
+<figcaption aria-hidden="true">循环链表</figcaption>
+</figure>
+<div data-align="center">
+图 3-8
+</div>
+<h3 id="例子">例子</h3>
+<p><strong>多项式 ADT</strong></p>
+<p>我们可以用表来定义一种关于一元多项式的抽象数据类型。令 <span
+class="math inline">\(F(X)=\sum_{i=0}^{N}A_iX^i\)</span>
+。如果大多数系数非
+0，我们就可以通过一个简单的数组来储存这些系数。然后，就可以进行多项式的加、减、乘、微分及其他操作的程序。</p>
+<p>下面我们来编写程序：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 多项式 ADT 的数组实现的类型声明</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> coeffArray[ maxDegree + <span class="number">1</span> ];</span><br><span class="line">    <span class="type">int</span> highPower;</span><br><span class="line">&#125; * polynomial;</span><br><span class="line"><span class="comment">// 初始化为 0</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">zeroPolynomial</span><span class="params">( polynomial poly )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>( i = <span class="number">0</span>; i &lt;= maxDegree; i++ )</span><br><span class="line">    &#123;</span><br><span class="line">        poly -&gt; coeffArray[ i ] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    poly -&gt; highPower = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 两个多项式相加</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">addPolynomial</span><span class="params">( <span class="type">const</span> polynomial poly1,</span></span><br><span class="line"><span class="params">                  	<span class="type">const</span> polynomial poly2, polynomial polySum )</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    </span><br><span class="line">    zeroPolynomial( polySum );</span><br><span class="line">    polySum -&gt; highPower = Max( poly1 -&gt; highPower,</span><br><span class="line">                              	poly2 -&gt; highPower );</span><br><span class="line">    <span class="keyword">for</span>( i = polySum -&gt; highPower; i &gt;= <span class="number">0</span>; i-- )</span><br><span class="line">    &#123;</span><br><span class="line">        polySum -&gt; coeffArray[ i ] = poly1 -&gt; coeffArray[ i ]</span><br><span class="line">                                    		+ poly2 -&gt; coeArray[ i ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 两个多项式相乘</span></span><br><span class="line">multPolynomial( <span class="type">const</span> polynomial poly1, <span class="type">const</span> polynomial poly2, polynomial polyProd )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    </span><br><span class="line">    zeroPolnomial( polyProd );</span><br><span class="line">    polyProd -&gt; highPower = poly1 -&gt; highPower + poly2 -&gt; highPower;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( polyProd -&gt; highPower &gt; maxDegree )</span><br><span class="line">    &#123;</span><br><span class="line">        error( <span class="string">&quot; Exceeded array size!&quot;</span> );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>( i = <span class="number">0</span>; i &lt;= poly1 -&gt; highPower; i ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>( j = <span class="number">0</span>; j &lt;= poly2 -&gt; highPower; j++ )</span><br><span class="line">                polyProd -&gt; coeffArray[ i + j ] +=</span><br><span class="line">                        poly1 -&gt; coeffArray[ i ] *</span><br><span class="line">            			poly2 -&gt; coeffArray[ j ];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的简单数组的实现方式是十分直观的，在此有一点想法：对于功能明显而且需要多次运用到的代码（如初始化），最好的做法不是
+copy，而是单独写成一个函数，这样会让代码更加易读。另外，我们还需要注意到的就是，虽然简单数组看起来方便快捷，但是如果处理
+<span class="math inline">\(P_1(x)=10x^{1000}+5x^{14}+1\)</span> 而
+<span
+class="math inline">\(P_2(x)=3x^{1900}-2x^{1492}+11x+5\)</span>，那么大多数时间就被用来和
+0 作没有意义的乘法，这显然是不可接受的。所以让我们回忆起链表。</p>
+<p>使用单链表。多项式的每一项含在单元中，并且这些单元按照递减顺序排序。下面我们用单链表表示
+<span class="math inline">\(P_1\)</span> 和 <span
+class="math inline">\(P_2\)</span> 两个多项式。</p>
+<figure>
+<img src="/../blog/source/imgs/4eb1970b9852ac1741cbe957f52d124.jpg"
+alt="两个多项式的链表表示" />
+<figcaption aria-hidden="true">两个多项式的链表表示</figcaption>
+</figure>
+<div data-align="center">
+图 3-9
+</div>
+<p>由此定义多项式的数据类型：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下内容为 louis kwok 原创，仅展现思路。</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">ptrToNode</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> coefficient;</span><br><span class="line">    <span class="type">int</span> exponent;</span><br><span class="line">    ptrToNode next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> ptrToNode polynomial; <span class="comment">// nodes sorted by exponent;</span></span><br><span class="line"><span class="comment">// 多项式初始化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">zeroPolynomial</span><span class="params">(polynomial poly)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (poly-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        poly-&gt;coefficient == <span class="number">0</span>;</span><br><span class="line">        poly = poly-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 在链表某个节点之后添加节点</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">addNode</span><span class="params">(ptrToNode newNode, ptrToNode existedNode)</span></span><br><span class="line">&#123;</span><br><span class="line">    ptrToNode tmp;</span><br><span class="line">    tmp = existedNode-&gt;next;</span><br><span class="line">    existedNode-&gt;next = newNode;</span><br><span class="line">    newNode-&gt;next = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 将节点插入到多项式链表</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">insertToPolynomial</span><span class="params">(ptrToNode pNode, polynomial poly)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (pNode-&gt;exponent &gt;= <span class="number">0</span> &amp;&amp; pNode-&gt;exponent &lt; poly-&gt;exponent)</span><br><span class="line">        poly = poly-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (pNode-&gt;exponent == poly-&gt;exponent)</span><br><span class="line">    &#123;</span><br><span class="line">        poly-&gt;coefficient += pNode-&gt;coefficient;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        addNode(pNode, poly);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 两个多项式相加</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">addPolynomial</span><span class="params">(<span class="type">const</span> polynomial poly1,</span></span><br><span class="line"><span class="params">    <span class="type">const</span> polynomial poly2, polynomial polySum)</span></span><br><span class="line">&#123;</span><br><span class="line">    ptrToNode polyTerm1, polyTerm2, item;</span><br><span class="line">    zeroPolynomial(polySum);</span><br><span class="line">    polyTerm1 = poly1;</span><br><span class="line">    polyTerm2 = poly2;</span><br><span class="line">    <span class="keyword">while</span> (polyTerm1-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (polyTerm2-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (polyTerm2-&gt;exponent &gt; polyTerm1-&gt;exponent)</span><br><span class="line">            &#123;</span><br><span class="line">                polyTerm2 = polyTerm2-&gt;next;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        item = (ptrToNode)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(nodeWithTail));</span><br><span class="line">        <span class="keyword">if</span> (polyTerm2-&gt;exponent == polyTerm1-&gt;exponent)</span><br><span class="line">        &#123;</span><br><span class="line">            item-&gt;exponent = polyTerm1-&gt;exponent;</span><br><span class="line">            item-&gt;coefficient = polyTerm1-&gt;coefficient + polyTerm2-&gt;coefficient;</span><br><span class="line">            insertToPolynomial(item, polySum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            item = polyTerm1;</span><br><span class="line">            insertToPolynomial(item, polySum);</span><br><span class="line">        &#125;</span><br><span class="line">        polyTerm1 = polyTerm1-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 两个多项式相乘</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">multPolynomial</span><span class="params">(<span class="type">const</span> polynomial poly1, <span class="type">const</span> polynomial poly2, polynomial polyProd)</span></span><br><span class="line">&#123;</span><br><span class="line">    ptrToNode ptrToTerm, polyTerm1, polyTerm2;</span><br><span class="line">    polyTerm1 = poly1, polyTerm2 = poly2;</span><br><span class="line">    <span class="keyword">while</span> (polyTerm1-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (polyTerm2-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ptrToTerm = (ptrToNode)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(nodeWithTail))</span><br><span class="line">            term.coefficient = polyTerm1-&gt;coefficient * polyTerm2-&gt;coefficient;</span><br><span class="line">            term.exponent = polyTerm1-&gt;exponent + polyTerm2-&gt;exponent;</span><br><span class="line">            insertToPolynomial(ptrToTerm, polyProd);</span><br><span class="line">            polyTerm2 = polyTerm2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        polyTerm1 = polyTerm1-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div data-align="center">
+以上代码为原创，转载请注明
+</div>
+<p><strong>基数排序</strong></p>
+<p>基数排序有时也叫卡式排序。</p>
+<p>如果我们有 N 个整数，范围从 1 到
+M，我们可以利用这个信息得到一种快速的排序，叫做桶式排序。我们留置一个数组，称之为
+<em>Count</em>，大小为 M，并初始化为 0。于是，<em>Count</em> 有 M
+个单元（或桶），开始时他们都是空的。当 <span
+class="math inline">\(A_i\)</span> 被读入后 <em>Count</em>[<span
+class="math inline">\(A_i\)</span>]增 1。在所有输入被读进后，扫描数组
+<em>Count</em>，打印好排好序的表。该算法的时间花费是 <span
+class="math inline">\(O(M+N)\)</span>。如果 <span
+class="math inline">\(M=\Theta(N)\)</span>，那么桶排序的时间就是 <span
+class="math inline">\(O(N)\)</span>。</p>
+<p>基数排序是桶排序的一种推广。</p>
+<figure>
+<img src="/../blog/source/imgs/6b52ac8c21189a360379f6b8b6b07a0.jpg"
+alt="基数排序示意图" />
+<figcaption aria-hidden="true">基数排序示意图</figcaption>
+</figure>
+<p>基数排序是桶排序的扩展。它的基本思想是：将整数按位切割成不同的数字，然后按照每位分别比较。具体做法是：将所有待比较的数值统一为同样的数位长度，较短的数前面补零。然后，从最低位开始排序。对于整数来讲，最大的数是几位，排序就要进行几次。</p>
+<p>具体的实现过程我已经上传 github，除此之外还有一些链表<a
+target="_blank" rel="noopener" href="https://github.com/ChenxuKwok/c-/blob/master/c%2B%2B/chainlist.cpp">相关的函数</a>，感兴趣的话可以看看，欢迎加星。</p>
+<p><strong>多重表</strong></p>
+<p>这个就是把每个人的信息看作节点，通过地址相互连接，可以避免二维数组对空间的大量浪费。</p>
+<h2 id="栈-adt">栈 ADT</h2>
+<h3 id="栈模型">栈模型</h3>
+<p>栈（stack）是限制插入和删除只能在一个位置上的表，该位置是表的末端，叫做栈的项（top）。对栈的基本操作有
+<em>Push</em>（进栈）和 <em>Pop</em>
+（出栈），前者相当于插入，后者则是删除。最后插入的元素可以通过使用 Top
+程序在执行 Pop 之前进行考察。对空栈进行 <em>Pop</em> 或 <em>Top</em>
+一般被认为是栈 ADT 的错误。另一方面，当运行 <em>Push</em>
+时空间用进是一个实现错误，不是 ADT 的错误。</p>
+<p>这里相关的函数有：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">isEmpty</span><span class="params">(<span class="built_in">stack</span> s)</span>;</span><br><span class="line"><span class="built_in">stack</span> <span class="title function_">createStack</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">disposeStack</span><span class="params">(<span class="built_in">stack</span> s)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">makeEmpty</span><span class="params">(<span class="built_in">stack</span> s)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">push</span><span class="params">(DATATYPE x, <span class="built_in">stack</span> s)</span>;</span><br><span class="line">DATATYPE <span class="title function_">top</span><span class="params">(<span class="built_in">stack</span> s)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">pop</span><span class="params">(<span class="built_in">stack</span> S)</span>;</span><br></pre></td></tr></table></figure>
+<p>感觉写起来也不是很难，相关源码可以看我 github 上的<a
+target="_blank" rel="noopener" href="https://github.com/ChenxuKwok/c-">仓库</a>。</p>
+<p><strong>栈的数组实现</strong></p>
+<p>用一个数组实现栈是简单的。每一个栈都有一个
+<em>TopOfStack</em>，对于空栈来说它是
+-1。为了将某个元素压到该栈中。我们将 <em>TipOfStack</em> 加 1，然后置
+<em>Stuck[TopOfStack] = X</em>，其中 <em>Stack</em>
+就是代表具体栈的数组。为了弹出栈元素，我们置返回值为<em>Stuck[TopOfStack]</em>
+然后对 <em>TopOfStack</em> 减 1。很多时候，<em>Stack</em> 和
+<em>TopOfStack</em>
+是代表一个栈的结构的一部分。使用全局变量和固定名字来表示数据结构几乎总是有害的，因为一个程序会用很多个栈。</p>
+<p>值得注意的是，这些操作不仅可以以常数时间运行，而且这个常数是很小的。在某些机器上，若在带有自增或自减寻址功能的寄存器上操作，整数的
+<em>pop</em> 和 <em>push</em>
+都可以写成一条机器指令，所以在以后栈很可能就是最基本的数据结构之一。</p>
+<p>这里有一段关于很多机器不检测栈出错的缘由，仅此列出。</p>
+<blockquote>
+<p>一个影响栈执行效率的问题是错误检测。我们的链表实现种事仔细检查错误的。正如上面所描述的，对空栈的
+<em>Pop</em> 和对满栈的 <em>Push</em> 都将</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Louis Kwok</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">http://example.com/2023/08/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">南宸</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><div class="post_share"><div class="social-share" data-image="/imgs/Avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://raw.githubusercontent.com/ChenxuKwok/helloworld/8f62a0b5f02db949ee6173205914c3a4aa4e64fe/7dfb092f6657e293dd2bfadf5fbc349.jpg" target="_blank"><img class="post-qr-code-img" src="https://raw.githubusercontent.com/ChenxuKwok/helloworld/8f62a0b5f02db949ee6173205914c3a4aa4e64fe/7dfb092f6657e293dd2bfadf5fbc349.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/ChenxuKwok/helloworld/8f62a0b5f02db949ee6173205914c3a4aa4e64fe/beec73a4b69662f1e87a0ab9858c06c.jpg" target="_blank"><img class="post-qr-code-img" src="https://raw.githubusercontent.com/ChenxuKwok/helloworld/8f62a0b5f02db949ee6173205914c3a4aa4e64fe/beec73a4b69662f1e87a0ab9858c06c.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/08/17/C-primer-chpt5-7/" title="C++_Primer_Plus(CHPT 5-7)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++_Primer_Plus(CHPT 5-7)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/08/17/C-primer-chpt5-7/" title="C++_Primer_Plus(CHPT 5-7)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-17</div><div class="title">C++_Primer_Plus(CHPT 5-7)</div></div></a></div><div><a href="/2023/07/04/c%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="c语言复习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-04</div><div class="title">c语言复习笔记</div></div></a></div><div><a href="/2023/07/09/C-primer_chpt1-4/" title="C++_Primer_Plus(CHPT 1-4)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-09</div><div class="title">C++_Primer_Plus(CHPT 1-4)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/imgs/Avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Louis Kwok</div><div class="author-info__description">岁月磨平心事</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ChenxuKwok" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/chenxu.guo.work@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">2023/7/15 更新 增加了侧边古诗词功能，快来 pick 你喜欢的古诗词吧~</div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+var sentence = document.querySelector("#poem_sentence")
+var author = document.querySelector("#poem_author")
+var dynasty = document.querySelector("#poem_dynasty")
+
+var sentenceText = result.data.content
+sentenceText = sentenceText.substr(0, sentenceText.length - 1);
+sentence.innerHTML = sentenceText
+dynasty.innerHTML = result.data.origin.dynasty
+author.innerHTML = result.data.origin.author + '《' + result.data.origin.title + '》'
+});</script><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BC%95%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第一章 引论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E8%AF%BE%E7%A8%8B%E8%AE%A8%E8%AE%BA%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">本课程讨论的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text">数学知识复习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">第二章 算法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">2.1.</span> <span class="toc-text">数学基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E5%88%86%E6%9E%90%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.1.</span> <span class="toc-text">要分析的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E6%B3%95%E5%88%99"><span class="toc-number">2.2.2.</span> <span class="toc-text">一般法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3"><span class="toc-number">2.2.3.</span> <span class="toc-text">最大子序列和问题的解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E4%B8%AD%E7%9A%84%E5%AF%B9%E6%95%B0"><span class="toc-number">2.2.4.</span> <span class="toc-text">运行时间中的对数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%A1%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="toc-number">3.</span> <span class="toc-text">第三章 表、栈和队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8-adt"><span class="toc-number">3.2.</span> <span class="toc-text">表 ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.2.1.</span> <span class="toc-text">表的简单数组实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%BB%86%E8%8A%82"><span class="toc-number">3.2.3.</span> <span class="toc-text">程序设计细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">3.2.4.</span> <span class="toc-text">常见的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8"><span class="toc-number">3.2.5.</span> <span class="toc-text">双链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8"><span class="toc-number">3.2.6.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">3.2.7.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88-adt"><span class="toc-number">3.3.</span> <span class="toc-text">栈 ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.3.1.</span> <span class="toc-text">栈模型</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" title="数据结构与算法分析">数据结构与算法分析</a><time datetime="2023-08-21T12:14:46.000Z" title="发表于 2023-08-21 20:14:46">2023-08-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/17/C-primer-chpt5-7/" title="C++_Primer_Plus(CHPT 5-7)">C++_Primer_Plus(CHPT 5-7)</a><time datetime="2023-08-17T10:17:36.000Z" title="发表于 2023-08-17 18:17:36">2023-08-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/09/C-primer_chpt1-4/" title="C++_Primer_Plus(CHPT 1-4)">C++_Primer_Plus(CHPT 1-4)</a><time datetime="2023-07-09T15:44:56.000Z" title="发表于 2023-07-09 23:44:56">2023-07-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/04/%E5%BD%A2%E7%AD%96%E5%A4%8D%E4%B9%A0/" title="形策复习">形策复习</a><time datetime="2023-07-04T04:07:39.000Z" title="发表于 2023-07-04 12:07:39">2023-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/04/c%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="c语言复习笔记">c语言复习笔记</a><time datetime="2023-07-04T01:35:39.000Z" title="发表于 2023-07-04 09:35:39">2023-07-04</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Louis Kwok</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/gitcalendar/js/gitcalendar.js"></script><script src="/js/weather.js"></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
