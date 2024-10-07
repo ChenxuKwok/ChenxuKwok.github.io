@@ -3,6 +3,13 @@
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/</loc>
          <lastmod>2024-10-07</lastmod>
-         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://chenxukwok.github.io/mkdocs-site/Notes/test/</loc>
+         <lastmod>2024-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://chenxukwok.github.io/mkdocs-site/blog/</loc>
+         <lastmod>2024-10-07</lastmod>
     </url>
 </urlset>
