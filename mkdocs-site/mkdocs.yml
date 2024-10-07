@@ -1,6 +1,0 @@
-site_name: Chenxu's Blog
-site_url: https://chenxukwok.github.io/mkdocs-site/
-
-site_author: Chenxu
-theme:
-    name: material
