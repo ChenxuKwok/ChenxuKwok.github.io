@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/</loc>
-         <lastmod>2024-10-07</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Notes/test/</loc>
-         <lastmod>2024-10-07</lastmod>
+         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://chenxukwok.github.io/mkdocs-site/Robotics/lab3/</loc>
+         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/blog/</loc>
-         <lastmod>2024-10-07</lastmod>
+         <lastmod>2024-10-08</lastmod>
     </url>
 </urlset>
