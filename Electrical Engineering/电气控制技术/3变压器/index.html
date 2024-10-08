@@ -1248,13 +1248,13 @@ E_1=4.44f_1N_1\phi_m
 $$
 为什么左边是有效值，右边是峰值？因为4.44比较好记。</p>
 <p>主电势滞后于主磁通90°。同时，需要注意主电动势和主磁通是垂直的，而空载电流会和主磁通有一点角度差。</p>
-<p>原边的漏电抗：
-$$
-\begin{align<em>}
-\dot{E_{1\sigma}} &amp; = -j\omega L_{1\sigma}\dot{I_0}\
+<p>原边的漏电抗：</p>
+<div class="arithmatex">\[
+\begin{align*}
+\dot{E_{1\sigma}} &amp; = -j\omega L_{1\sigma}\dot{I_0}\\
 x_{1} &amp; = \omega L_{1\sigma}
-\end{align</em>}
-$$</p>
+\end{align*}
+\]</div>
 <h3 id="变压器的电压平衡方程式空载">变压器的电压平衡方程式（空载）<a class="headerlink" href="#变压器的电压平衡方程式空载" title="Permanent link"></a></h3>
 <div class="arithmatex">\[
 \begin{align*}
@@ -1281,27 +1281,27 @@ $$</p>
 <li><span class="arithmatex">\(x_m\)</span>：励磁电感，反映的是主电抗，大电感。</li>
 <li><span class="arithmatex">\(r_m\)</span>：励磁电阻，反映的是铁耗。</li>
 </ul>
-<p>空载的时候电压和电流吸收能量，以补偿铁损和铜损。经过推导，可以得到：
-$$
-\begin{align<em>}
-  \dot{U_1} &amp;= -\dot{E_1} + \dot{I_0}Z_1\
-  \dot{U_1}\dot{I_0} &amp;= -\dot{E_1}\dot{I_0} + \dot{I_0}^2Z_1\
-  p_{Fe} &amp;= -\dot{E_1}\cdot\dot{I_0}\
-  &amp;=-\dot{E_1}\cdot \left(\dot{I_\mu}+\dot{I_{Fe}}\right)\
+<p>空载的时候电压和电流吸收能量，以补偿铁损和铜损。经过推导，可以得到：</p>
+<div class="arithmatex">\[
+\begin{align*}
+  \dot{U_1} &amp;= -\dot{E_1} + \dot{I_0}Z_1\\
+  \dot{U_1}\dot{I_0} &amp;= -\dot{E_1}\dot{I_0} + \dot{I_0}^2Z_1\\
+  p_{Fe} &amp;= -\dot{E_1}\cdot\dot{I_0}\\
+  &amp;=-\dot{E_1}\cdot \left(\dot{I_\mu}+\dot{I_{Fe}}\right)\\
   &amp;=E_1I_{Fe}
-\end{align</em>}
-$$</p>
+\end{align*}
+\]</div>
 <h2 id="变压器的负载运行">变压器的负载运行<a class="headerlink" href="#变压器的负载运行" title="Permanent link"></a></h2>
 <p>在<a href="#变压器的电压平衡方程式空载">上一节</a>中，我们提到了<strong>恒磁通</strong>的概念，也就是变压器原边的<span class="arithmatex">\(E_1\approx U_1=const\)</span>而且<span class="arithmatex">\(\phi_m \approx const\)</span>。既然主磁通是恒定的，根据<a href="../1%E4%BB%8B%E7%BB%8D/#基尔霍夫第二定律">基尔霍夫第二定律</a>，我们可以得到总磁势是恒定的。</p>
 <p>!!! note “关键”
     磁动势恒定是由恒磁通以及忽略漏磁得来的，这个关系式让我们建立了负载电流与空载电流之间的联系。</p>
-<p>所以根据这个式子，就可以列出一个很重要的关系式：
-$$
-\begin{align<em>}
-  \dot{I_1}N_1 + \dot{I_2}N_2 &amp;= \dot{I_0}N_1 \
-  \dot{I_1} + \frac{1}{k} \dot{I_2} &amp;= \dot{I_0}<br />
-\end{align</em>}
-$$</p>
+<p>所以根据这个式子，就可以列出一个很重要的关系式：</p>
+<div class="arithmatex">\[
+\begin{align*}
+  \dot{I_1}N_1 + \dot{I_2}N_2 &amp;= \dot{I_0}N_1 \\
+  \dot{I_1} + \frac{1}{k} \dot{I_2} &amp;= \dot{I_0}  
+\end{align*}
+\]</div>
 <p>令这个关系式中，<span class="arithmatex">\(\dot{I_1}=\dot{I_0}+\dot{I_L}\)</span>，简单推一下就可以得到</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1335,7 +1335,7 @@ $$</p>
 <p>为了更好的理解，建议自己根据方程画一下T型等效电路的相量图。</p>
 <p>这里再加一个公式</p>
 <div class="arithmatex">\[
-\alpha = \tg^{-1}\frac{r_m}{x_m}
+\alpha = \tan^{-1}\frac{r_m}{x_m}
 \]</div>
 <p>这也是<span class="arithmatex">\(\alpha\)</span>被称作铁损角的原因，其大小主要取决于铁损电阻。</p>
 <h2 id="变压器的参数测定">变压器的参数测定<a class="headerlink" href="#变压器的参数测定" title="Permanent link"></a></h2>
@@ -1343,11 +1343,13 @@ $$</p>
 <p class="admonition-title">注意</p>
 <ul>
 <li>变压器的空载损耗就是铁损。</li>
-<li>空载电压的时候是电压加在低压方</li>
+<li>空载电压的时候是电压加在低压方。</li>
+<li>空载实验用T型等效电路</li>
 <li>空载实验看电压。</li>
 <li>短路实验是电压加在高压方</li>
 <li>短路实验看电流。</li>
 <li>短路损耗就是铜损。</li>
+<li>短路的时候用最简化等效电路。</li>
 </ul>
 </div>
 <h2 id="本章作业">本章作业<a class="headerlink" href="#本章作业" title="Permanent link"></a></h2>
