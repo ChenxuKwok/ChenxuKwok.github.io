@@ -1,2 +1,2 @@
 # Welcome to Chenxu's personal page.
-clik here to view whole web!
+clik [here](https://chenxukwok.github.io/) to view whole web!
