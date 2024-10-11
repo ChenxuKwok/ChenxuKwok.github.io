@@ -294,6 +294,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Tech/conda%26pip/" class="md-tabs__link">
+          
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -718,6 +736,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#三相异步电机的等值电路功率图转矩" class="md-nav__link">
+    <span class="md-ellipsis">
+      三相异步电机的等值电路、功率图、转矩
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三相异步电机的等值电路、功率图、转矩">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#等值电路" class="md-nav__link">
+    <span class="md-ellipsis">
+      等值电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#异步电机的转矩" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步电机的转矩
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#异步电机的机械特性" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步电机的机械特性
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -969,6 +1029,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech/conda%26pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda和pip究竟有什么区别和联系
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1088,6 +1216,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#三相异步电机的等值电路功率图转矩" class="md-nav__link">
+    <span class="md-ellipsis">
+      三相异步电机的等值电路、功率图、转矩
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三相异步电机的等值电路、功率图、转矩">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#等值电路" class="md-nav__link">
+    <span class="md-ellipsis">
+      等值电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#异步电机的转矩" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步电机的转矩
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#异步电机的机械特性" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步电机的机械特性
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1146,7 +1316,7 @@ n_s = n_1 = \frac{60f_1}{p}(r/min)
 <h3 id="异步电机的工作原理">异步电机的工作原理<a class="headerlink" href="#异步电机的工作原理" title="Permanent link"></a></h3>
 <p>左力右电的定律。</p>
 <div class="arithmatex">\[
-E = Blv\\
+E = Blv\\\\
 F = Bil
 \]</div>
 <p>鼠笼的条相对于旋转磁场往相反的方向运动，然后就会产生电动势，电动势会带来电流，而这个电流会让导条受力。一通分析之后，这个受力的方向会和磁场旋转的方向相同。（用楞次定律也可以解释，而且更加直观）</p>
@@ -1237,9 +1407,34 @@ E_{2s} = 4.44 f_2 N_2 \Phi_m k_{\omega2} = sE_{2}
 <div class="admonition note">
 <p class="admonition-title">重要结论</p>
 <p>定子磁场和转子磁场相对静止。</p>
-<p>这个结论一开始还是不太好理解，这里就是在转子磁场在实际转动的基础上，因为自身感应出的电流也会产生磁场，所以就会增加 <span class="arithmatex">\(\Delta n\)</span>，所以和就是 <span class="arithmatex">\(n_s\)</span>.、</p>
+<p>这个结论一开始还是不太好理解，这里就是在转子磁场在实际转动的基础上，因为自身感应出的电流也会产生磁场，所以就会增加 <span class="arithmatex">\(\Delta n\)</span>，所以和就是 <span class="arithmatex">\(n_s\)</span>.</p>
 <p>值得注意的是，转子磁场的转速和转子本身的转速不一样。</p>
 </div>
+<h2 id="三相异步电机的等值电路功率图转矩">三相异步电机的等值电路、功率图、转矩<a class="headerlink" href="#三相异步电机的等值电路功率图转矩" title="Permanent link"></a></h2>
+<h3 id="等值电路">等值电路<a class="headerlink" href="#等值电路" title="Permanent link"></a></h3>
+<p>异步电机的等值电路，和变压器比较类似，但是多了一个频率的归算。相当于在转子侧串联一个大小为 <span class="arithmatex">\(\frac{1-s}{s} R_2\)</span> 的纯电阻，这样子就可以变换成转子不转的情形。</p>
+<p>也就是二次侧频率和一次侧一样。</p>
+<p>值得注意的是，这个串联上去的等效电阻消耗的功率是<strong>总机械功率</strong> <span class="arithmatex">\(P_\Omega\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">注意</p>
+<p>等效电路中<span class="arithmatex">\(R_m\)</span>体现的是定子侧的铁耗，因为转子侧的频率很小，可忽略。分析异步电动机的铁损只有定子侧的铁损。</p>
+</div>
+<p><img alt="异步电机功率图" src="../image-1.png" /></p>
+<p>输出机械功率和真实的输出功率有差异，需要减去机械损耗（不变）和附加损耗（可变）。这里和直流电机是类似的。</p>
+<p>两个重要的功率关系式：</p>
+<div class="arithmatex">\[
+p_{Cu2} = sP_{em}\\
+P_{\Omega} = (1-s)P_{em}
+\]</div>
+<p>所以电磁功率一定的时候，电机转速越低，铜耗越大，机械功率越小。我们一般要求异步电动机不能长期在低速下长时间运行。</p>
+<h3 id="异步电机的转矩">异步电机的转矩<a class="headerlink" href="#异步电机的转矩" title="Permanent link"></a></h3>
+<p>和直流电机类似，不再赘述。</p>
+<div class="arithmatex">\[
+T = \frac{P}{\Omega}\\
+T = 9.55 \frac{P}{n}
+\]</div>
+<h2 id="异步电机的机械特性">异步电机的机械特性<a class="headerlink" href="#异步电机的机械特性" title="Permanent link"></a></h2>
+<p>定义：三相异步电机的机械特性是指于电压、频率和参数固定的条件下，电磁转矩和转速之间的函数关系。</p>
 
 
 
@@ -1260,7 +1455,7 @@ E_{2s} = 4.44 f_2 N_2 \Phi_m k_{\omega2} = sE_{2}
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-11</span>
   </span>
 
     
