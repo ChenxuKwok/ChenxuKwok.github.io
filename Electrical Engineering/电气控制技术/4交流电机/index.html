@@ -928,6 +928,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#本章作业" class="md-nav__link">
+    <span class="md-ellipsis">
+      本章作业
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1150,11 +1159,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/InverseKenimetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inverse Kinematics with DH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/lab3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     实验3 ：机械臂正运动学求解——实验报告
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab4 机械臂逆运动学求解
   </span>
   
 
@@ -1579,6 +1630,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#本章作业" class="md-nav__link">
+    <span class="md-ellipsis">
+      本章作业
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1638,8 +1698,10 @@ n_s = n_1 = \frac{60f_1}{p}(r/min)
 <h3 id="异步电机的工作原理">异步电机的工作原理<a class="headerlink" href="#异步电机的工作原理" title="Permanent link"></a></h3>
 <p>左力右电的定律。</p>
 <div class="arithmatex">\[
-E = Blv\\\\
-F = Bil
+\begin{align*}
+E &amp;= Blv\\
+F &amp;= Bil
+\end{align*}
 \]</div>
 <p>鼠笼的条相对于旋转磁场往相反的方向运动，然后就会产生电动势，电动势会带来电流，而这个电流会让导条受力。一通分析之后，这个受力的方向会和磁场旋转的方向相同。（用楞次定律也可以解释，而且更加直观）</p>
 <p>从这里的受力就可以分析出“异步”在何处。读者可以想象一下，相当于这个旋转的磁场再牵着一根绳子拉着转子转动，而这个磁场和受力是不均匀的，也就是绳子是软的，所以，转子一定会和磁场存在一定的延时，这就是“异步”的含义。</p>
@@ -1702,8 +1764,10 @@ s = \frac{n_s - n}{n_s} = \frac{\Delta n}{n_s}
 <h4 id="假设转子不转">假设转子不转<a class="headerlink" href="#假设转子不转" title="Permanent link"></a></h4>
 <p>频率一样，所以就完全和变压器一样。</p>
 <div class="arithmatex">\[
-U_1 \approx E_1 = 4.44 f_1 N_1 \Phi_m k_{\omega1}\\
-U_2 \approx E_2 = 4.44 f_1 N_2 \Phi_m k_{\omega2}
+\begin{align*}
+U_1 \approx E_1 &amp;= 4.44 f_1 N_1 \Phi_m k_{\omega1}\\
+U_2 \approx E_2 &amp;= 4.44 f_1 N_2 \Phi_m k_{\omega2}
+\end{align*}
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">参数定义</p>
@@ -1745,15 +1809,19 @@ E_{2s} = 4.44 f_2 N_2 \Phi_m k_{\omega2} = sE_{2}
 <p>输出机械功率和真实的输出功率有差异，需要减去机械损耗（不变）和附加损耗（可变）。这里和直流电机是类似的。</p>
 <p>两个重要的功率关系式：</p>
 <div class="arithmatex">\[
-p_{Cu2} = sP_{em}\\
-P_{\Omega} = (1-s)P_{em}
+\begin{align*}
+p_{Cu2} &amp;= sP_{em}\\
+P_{\Omega} &amp;= (1-s)P_{em}
+\end{align*}
 \]</div>
 <p>所以电磁功率一定的时候，电机转速越低，铜耗越大，机械功率越小。我们一般要求异步电动机不能长期在低速下长时间运行。</p>
 <h3 id="异步电机的转矩">异步电机的转矩<a class="headerlink" href="#异步电机的转矩" title="Permanent link"></a></h3>
 <p>和直流电机类似，不再赘述。</p>
 <div class="arithmatex">\[
-T = \frac{P}{\Omega}\\
-T = 9.55 \frac{P}{n}
+\begin{align*}
+T &amp;= \frac{P}{\Omega}\\
+T &amp;= 9.55 \frac{P}{n}
+\end{align*}
 \]</div>
 <h2 id="异步电机的机械特性">异步电机的机械特性<a class="headerlink" href="#异步电机的机械特性" title="Permanent link"></a></h2>
 <h3 id="自然机械特性">自然机械特性<a class="headerlink" href="#自然机械特性" title="Permanent link"></a></h3>
@@ -1776,8 +1844,10 @@ T_em = \frac{P_{em}}{\Omega_1}=\frac{3I_2'R_2/s}{\frac{2\pi f_1}{p}}=\frac{3p}{2
 <p><strong>临界转矩和临界转差</strong></p>
 <p>我们最关关心的是极值点，这个点的表达式可以用求导得到，因为原边的铜耗比较小，进一步分析，可以得到：</p>
 <div class="arithmatex">\[
-T_{em} \propto K\left(\frac{U_1}{f_1}\right)^2\\
-s_m \approx \frac{R_2'}{X_{1\sigma} + X_{2\sigma}'}
+\begin{align*}
+T_{em} &amp;\propto K\left(\frac{U_1}{f_1}\right)^2\\
+s_m &amp;\approx \frac{R_2'}{X_{1\sigma} + X_{2\sigma}'}  
+\end{align*}
 \]</div>
 <p>最大转矩<strong>与电压的平方成正比，与转子电阻无关</strong>。</p>
 <div class="admonition note">
@@ -1883,8 +1953,10 @@ f_2 = sf_1
 <p>频敏变阻器的阻值随着频率的变化而变化，所以可以用来调节电阻值。</p>
 <h2 id="异步电机的调速">异步电机的调速<a class="headerlink" href="#异步电机的调速" title="Permanent link"></a></h2>
 <div class="arithmatex">\[
-n_s = \frac{60f_1}{p}\\
-n = n_s(1-s) = \frac{60f_1}{p}(1-s)
+\begin{align*}
+n_s &amp;= \frac{60f_1}{p}\\
+n &amp;= n_s(1-s) = \frac{60f_1}{p}(1-s)
+\end{align*}
 \]</div>
 <h3 id="变频调速">变频调速<a class="headerlink" href="#变频调速" title="Permanent link"></a></h3>
 <p>AC-DC-AC</p>
@@ -1941,6 +2013,10 @@ U_1 \approx E_1 = 4.44f_1N_1\Phi_m k_{\omega1}
 <li>变频调速降频的时候</li>
 <li>下放重物</li>
 </ul>
+<h2 id="本章作业">本章作业<a class="headerlink" href="#本章作业" title="Permanent link"></a></h2>
+<iframe src="../homework/电气控制技术作业3.pdf" width="100%" height="600px" style="border: none;">
+This browser does not support PDFs
+</iframe>
 
 
 
@@ -1961,7 +2037,7 @@ U_1 \approx E_1 = 4.44f_1N_1\Phi_m k_{\omega1}
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-17</span>
   </span>
 
     
@@ -2097,6 +2173,8 @@ U_1 \approx E_1 = 4.44f_1N_1\Phi_m k_{\omega1}
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="/js/open_in_new_tab.js"></script>
       

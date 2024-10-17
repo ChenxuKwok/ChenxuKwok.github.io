@@ -2,50 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/PCB%20Design/lecture1/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/%E7%94%B5%E6%B0%94%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/1%E4%BB%8B%E7%BB%8D/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/%E7%94%B5%E6%B0%94%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/2%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/%E7%94%B5%E6%B0%94%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/3%E5%8F%98%E5%8E%8B%E5%99%A8/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/%E7%94%B5%E6%B0%94%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/4%E4%BA%A4%E6%B5%81%E7%94%B5%E6%9C%BA/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Electrical%20Engineering/%E7%94%B5%E6%B0%94%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/5%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Notes/test/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Notes/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/2%E7%A6%BB%E6%95%A3%E4%BF%A1%E6%BA%90%E5%8F%8A%E5%85%B6%E4%BF%A1%E6%81%AF%E6%B5%8B%E5%BA%A6/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
+    </url>
+    <url>
+         <loc>https://chenxukwok.github.io/mkdocs-site/Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/InverseKenimetic/</loc>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/lab3/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
+    </url>
+    <url>
+         <loc>https://chenxukwok.github.io/mkdocs-site/Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/lab4/</loc>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Tech/conda%26pip/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
     <url>
          <loc>https://chenxukwok.github.io/mkdocs-site/Tech/%E5%9C%A8%E6%82%A8%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%B7%BB%E5%8A%A0pdf%E6%96%87%E4%BB%B6/</loc>
-         <lastmod>2024-10-13</lastmod>
+         <lastmod>2024-10-17</lastmod>
     </url>
 </urlset>

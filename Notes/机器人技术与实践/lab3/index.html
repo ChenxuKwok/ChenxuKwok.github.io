@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://chenxukwok.github.io/mkdocs-site/Notes/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5/lab3/">
       
       
-        <link rel="prev" href="../../%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/2%E7%A6%BB%E6%95%A3%E4%BF%A1%E6%BA%90%E5%8F%8A%E5%85%B6%E4%BF%A1%E6%81%AF%E6%B5%8B%E5%BA%A6/">
+        <link rel="prev" href="../InverseKenimetic/">
       
       
-        <link rel="next" href="../../../Tech/conda%26pip/">
+        <link rel="next" href="../lab4/">
       
       
       <link rel="icon" href="https://s2.loli.net/2024/04/26/PmRdM9iGnvOJHgu.png">
@@ -820,6 +820,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../InverseKenimetic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inverse Kinematics with DH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -908,6 +929,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab4 机械臂逆运动学求解
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1164,65 +1206,60 @@
 <p>值得注意的是，通过欧拉角表示的时候，其数值和旋转顺序有很大的关系。</p>
 <p>在我们上课的时候学的是X→Y→Z的旋转顺序，而仿真软件Coppelia中用的是Z→Y→X的旋转顺序，对应的结果是不一样的。</p>
 <p>根据上课学的东西，我们分别有：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Rx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)];</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">Ry</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">      </span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)];</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Rz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">      </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">result1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Rx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ry</span><span class="o">*</span><span class="w"> </span><span class="n">Rz</span><span class="p">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">result2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Rz</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ry</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Rx</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<p>$$
+R_x = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \
+0 &amp; \cos(a_1) &amp; \sin(a_1) \
+0 &amp; -\sin(a_1) &amp; \cos(a_1)
+\end{bmatrix}\</p>
+<p>R_y = \begin{bmatrix}
+\cos(a_2) &amp; 0 &amp; -\sin(a_2) \
+0 &amp; 1 &amp; 0 \
+\sin(a_2) &amp; 0 &amp; \cos(a_2)
+\end{bmatrix}\</p>
+<p>R_z = \begin{bmatrix}
+\cos(a_3) &amp; \sin(a_3) &amp; 0 \
+-\sin(a_3) &amp; \cos(a_3) &amp; 0 \
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
 <p>这三个矩阵就是分别绕X，Y，Z轴的旋转矩阵（<span class="arithmatex">\(a_1,a_2,a_3\)</span>分别表示其绕X，Y，Z轴旋转的角度），而<code>result1</code>和<code>result2</code>分别表示了两种不同的旋转顺序。</p>
 <p>我们可以使用MATLAB很方便地求解出旋转矩阵：</p>
 <p>当按照X→Y→Z的顺序旋转时，旋转矩阵是：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">[</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)]</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">[</span><span class="o">-</span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">)]</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">[</span><span class="w">         </span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span><span class="w">                          </span><span class="o">-</span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span><span class="w">                           </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)]</span>
-</code></pre></div></td></tr></table></div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\cos(a_2)\cos(a_3) &amp; \cos(a_1)\sin(a_3) + \cos(a_3)\sin(a_1)\sin(a_2) &amp; \sin(a_1)\sin(a_3) - \cos(a_1)\cos(a_3)\sin(a_2) \\
+-\cos(a_2)\sin(a_3) &amp; \cos(a_1)\cos(a_3) - \sin(a_1)\sin(a_2)\sin(a_3) &amp; \cos(a_3)\sin(a_1) + \cos(a_1)\sin(a_2)\sin(a_3) \\
+\sin(a_2) &amp; -\cos(a_2)\sin(a_1) &amp; \cos(a_1)\cos(a_2)
+\end{bmatrix}
+\]</div>
 <p>而按照Z→Y→X的顺序旋转的时候，旋转矩阵是：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">[</span><span class="w">                          </span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w">                           </span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w">        </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">[</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)]</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">[</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">a2</span><span class="p">)]</span>
-</code></pre></div></td></tr></table></div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\cos(a_2)\cos(a_3) &amp; \cos(a_2)\sin(a_3) &amp; -\sin(a_2) \\
+\cos(a_3)\sin(a_1)\sin(a_2) - \cos(a_1)\sin(a_3) &amp; \cos(a_1)\cos(a_3) + \sin(a_1)\sin(a_2)\sin(a_3) &amp; \cos(a_2)\sin(a_1) \\
+\sin(a_1)\sin(a_3) + \cos(a_1)\cos(a_3)\sin(a_2) &amp; \cos(a_1)\sin(a_2)\sin(a_3) - \cos(a_3)\sin(a_1) &amp; \cos(a_1)\cos(a_2)
+\end{bmatrix}
+\]</div>
 <p>在这篇报告中，为了和仿真软件对应，我们统一采用第二种旋转矩阵。</p>
 <p>所以，就可以通过这个旋转矩阵求解欧拉角：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span>
-<span class="normal"><a href="#__codelineno-3-7">7</a></span>
-<span class="normal"><a href="#__codelineno-3-8">8</a></span>
-<span class="normal"><a href="#__codelineno-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># phi, theta, psi分别表示绕X，Y，Z轴旋转的角度。</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">def</span> <span class="nf">T2eularAngle</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="n">R</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">location</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="n">phi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="n">psi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="c1"># 拼接坐标和角度</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">location</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">psi</span><span class="p">])))</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># phi, theta, psi分别表示绕X，Y，Z轴旋转的角度。</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">def</span> <span class="nf">T2eularAngle</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="n">R</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">location</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">phi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">psi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="c1"># 拼接坐标和角度</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">location</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">psi</span><span class="p">])))</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="计算结果和仿真结果的对比">计算结果和仿真结果的对比<a class="headerlink" href="#计算结果和仿真结果的对比" title="Permanent link"></a></h2>
 <p>将以下5组关节角参数带入正运动学解，计算机械臂末端Tip点的空间位置，计算末端执行器的姿态，以XY’Z’欧拉角表示结果:</p>
@@ -1357,123 +1394,123 @@
 <p>这个过程还是比较简单的，也就是通过上面的变换矩阵算出来一个总的齐次变换矩阵，这个矩阵里面包含了末端执行点的位置和姿态信息，根据一些规则就可以把这个矩阵里面计算的结果变成我们需要的样子。</p>
 <p>比较tricky的两个点，一个就是前面提到的旋转顺序，另外就是需要把计算得到的弧度制换算成角度制。</p>
 <h2 id="附件正运动学源代码python">附件：正运动学源代码（python）<a class="headerlink" href="#附件正运动学源代码python" title="Permanent link"></a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span>
-<span class="normal"><a href="#__codelineno-4-15">15</a></span>
-<span class="normal"><a href="#__codelineno-4-16">16</a></span>
-<span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span>
-<span class="normal"><a href="#__codelineno-4-20">20</a></span>
-<span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span>
-<span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span>
-<span class="normal"><a href="#__codelineno-4-26">26</a></span>
-<span class="normal"><a href="#__codelineno-4-27">27</a></span>
-<span class="normal"><a href="#__codelineno-4-28">28</a></span>
-<span class="normal"><a href="#__codelineno-4-29">29</a></span>
-<span class="normal"><a href="#__codelineno-4-30">30</a></span>
-<span class="normal"><a href="#__codelineno-4-31">31</a></span>
-<span class="normal"><a href="#__codelineno-4-32">32</a></span>
-<span class="normal"><a href="#__codelineno-4-33">33</a></span>
-<span class="normal"><a href="#__codelineno-4-34">34</a></span>
-<span class="normal"><a href="#__codelineno-4-35">35</a></span>
-<span class="normal"><a href="#__codelineno-4-36">36</a></span>
-<span class="normal"><a href="#__codelineno-4-37">37</a></span>
-<span class="normal"><a href="#__codelineno-4-38">38</a></span>
-<span class="normal"><a href="#__codelineno-4-39">39</a></span>
-<span class="normal"><a href="#__codelineno-4-40">40</a></span>
-<span class="normal"><a href="#__codelineno-4-41">41</a></span>
-<span class="normal"><a href="#__codelineno-4-42">42</a></span>
-<span class="normal"><a href="#__codelineno-4-43">43</a></span>
-<span class="normal"><a href="#__codelineno-4-44">44</a></span>
-<span class="normal"><a href="#__codelineno-4-45">45</a></span>
-<span class="normal"><a href="#__codelineno-4-46">46</a></span>
-<span class="normal"><a href="#__codelineno-4-47">47</a></span>
-<span class="normal"><a href="#__codelineno-4-48">48</a></span>
-<span class="normal"><a href="#__codelineno-4-49">49</a></span>
-<span class="normal"><a href="#__codelineno-4-50">50</a></span>
-<span class="normal"><a href="#__codelineno-4-51">51</a></span>
-<span class="normal"><a href="#__codelineno-4-52">52</a></span>
-<span class="normal"><a href="#__codelineno-4-53">53</a></span>
-<span class="normal"><a href="#__codelineno-4-54">54</a></span>
-<span class="normal"><a href="#__codelineno-4-55">55</a></span>
-<span class="normal"><a href="#__codelineno-4-56">56</a></span>
-<span class="normal"><a href="#__codelineno-4-57">57</a></span>
-<span class="normal"><a href="#__codelineno-4-58">58</a></span>
-<span class="normal"><a href="#__codelineno-4-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">]</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">5</span><span class="p">]])</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">a1</span><span class="p">,</span> <span class="n">alpha1</span><span class="p">,</span> <span class="n">d1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">230</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">a2</span><span class="p">,</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="n">a3</span><span class="p">,</span> <span class="n">alpha3</span><span class="p">,</span> <span class="n">d3</span> <span class="o">=</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">a4</span><span class="p">,</span> <span class="n">alpha4</span><span class="p">,</span> <span class="n">d4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="n">a5</span><span class="p">,</span> <span class="n">alpha5</span><span class="p">,</span> <span class="n">d5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">77</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="n">a6</span><span class="p">,</span> <span class="n">alpha6</span><span class="p">,</span> <span class="n">d6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">85.5</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">DH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">d1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">alpha1</span><span class="p">],</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">alpha2</span><span class="p">],</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">d3</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">alpha3</span><span class="p">],</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">d4</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">alpha4</span><span class="p">],</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">d5</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">alpha5</span><span class="p">],</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">d6</span><span class="p">,</span> <span class="n">a6</span><span class="p">,</span> <span class="n">alpha6</span><span class="p">]</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="p">])</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="k">def</span> <span class="nf">T2eularAngle</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a>    <span class="n">R</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a>    <span class="n">location</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">phi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="n">psi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="c1"># 拼接坐标和角度</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">location</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">psi</span><span class="p">])))</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="k">def</span> <span class="nf">DH_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a>        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">d</span><span class="p">],</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39"></a>        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40"></a>    <span class="p">])</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a>
-<a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="k">def</span> <span class="nf">forward_kinematics</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="n">Total_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46"></a>        <span class="n">theta_i</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<a id="__codelineno-4-47" name="__codelineno-4-47"></a>        <span class="n">d_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<a id="__codelineno-4-48" name="__codelineno-4-48"></a>        <span class="n">a_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<a id="__codelineno-4-49" name="__codelineno-4-49"></a>        <span class="n">alpha_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<a id="__codelineno-4-50" name="__codelineno-4-50"></a>        <span class="n">Total_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Total_T</span><span class="p">,</span> <span class="n">DH_matrix</span><span class="p">(</span><span class="n">theta_i</span><span class="p">,</span> <span class="n">d_i</span><span class="p">,</span> <span class="n">a_i</span><span class="p">,</span> <span class="n">alpha_i</span><span class="p">))</span>
-<a id="__codelineno-4-51" name="__codelineno-4-51"></a>
-<a id="__codelineno-4-52" name="__codelineno-4-52"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">T2eularAngle</span><span class="p">(</span><span class="n">Total_T</span><span class="p">)</span>
-<a id="__codelineno-4-53" name="__codelineno-4-53"></a>
-<a id="__codelineno-4-54" name="__codelineno-4-54"></a>
-<a id="__codelineno-4-55" name="__codelineno-4-55"></a>    <span class="k">return</span> <span class="n">result</span>
-<a id="__codelineno-4-56" name="__codelineno-4-56"></a>
-<a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-4-58" name="__codelineno-4-58"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">forward_kinematics</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<a id="__codelineno-4-59" name="__codelineno-4-59"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span>
+<span class="normal"><a href="#__codelineno-1-56">56</a></span>
+<span class="normal"><a href="#__codelineno-1-57">57</a></span>
+<span class="normal"><a href="#__codelineno-1-58">58</a></span>
+<span class="normal"><a href="#__codelineno-1-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">]</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">5</span><span class="p">]])</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">a1</span><span class="p">,</span> <span class="n">alpha1</span><span class="p">,</span> <span class="n">d1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">230</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">a2</span><span class="p">,</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">a3</span><span class="p">,</span> <span class="n">alpha3</span><span class="p">,</span> <span class="n">d3</span> <span class="o">=</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">a4</span><span class="p">,</span> <span class="n">alpha4</span><span class="p">,</span> <span class="n">d4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">a5</span><span class="p">,</span> <span class="n">alpha5</span><span class="p">,</span> <span class="n">d5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">77</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">a6</span><span class="p">,</span> <span class="n">alpha6</span><span class="p">,</span> <span class="n">d6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">85.5</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">DH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">d1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">alpha1</span><span class="p">],</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">alpha2</span><span class="p">],</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">d3</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">alpha3</span><span class="p">],</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">d4</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">alpha4</span><span class="p">],</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">d5</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">alpha5</span><span class="p">],</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">d6</span><span class="p">,</span> <span class="n">a6</span><span class="p">,</span> <span class="n">alpha6</span><span class="p">]</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="p">])</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="k">def</span> <span class="nf">T2eularAngle</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="n">R</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>    <span class="n">location</span> <span class="o">=</span> <span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>    <span class="n">phi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>    <span class="n">psi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>    <span class="c1"># 拼接坐标和角度</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">location</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">psi</span><span class="p">])))</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="k">def</span> <span class="nf">DH_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a>        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">d</span><span class="p">],</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a>        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a>    <span class="p">])</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="k">def</span> <span class="nf">forward_kinematics</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a>    <span class="n">Total_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a>        <span class="n">theta_i</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a>        <span class="n">d_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a>        <span class="n">a_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a>        <span class="n">alpha_i</span> <span class="o">=</span> <span class="n">DH</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a>        <span class="n">Total_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Total_T</span><span class="p">,</span> <span class="n">DH_matrix</span><span class="p">(</span><span class="n">theta_i</span><span class="p">,</span> <span class="n">d_i</span><span class="p">,</span> <span class="n">a_i</span><span class="p">,</span> <span class="n">alpha_i</span><span class="p">))</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">T2eularAngle</span><span class="p">(</span><span class="n">Total_T</span><span class="p">)</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a>    <span class="k">return</span> <span class="n">result</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">forward_kinematics</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1495,7 +1532,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-17</span>
   </span>
 
     
@@ -1631,6 +1668,8 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="/js/open_in_new_tab.js"></script>
       
