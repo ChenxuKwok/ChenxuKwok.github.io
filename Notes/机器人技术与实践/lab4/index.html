@@ -16,7 +16,7 @@
         <link rel="prev" href="../lab3/">
       
       
-        <link rel="next" href="../../../Tech/conda%26pip/">
+        <link rel="next" href="../../../Tech/CTC/">
       
       
       <link rel="icon" href="https://s2.loli.net/2024/04/26/PmRdM9iGnvOJHgu.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lab4 机械臂逆运动学求解 - Chenxu's Blog</title>
+        <title>lab4 - Chenxu's Blog</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab4-机械臂逆运动学求解" class="md-skip">
+        <a href="#lab4" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab4 机械臂逆运动学求解
+              lab4
             
           </span>
         </div>
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Tech/conda%26pip/" class="md-tabs__link">
+        <a href="../../../Tech/CTC/" class="md-tabs__link">
           
   
   Tech
@@ -874,15 +874,78 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    lab4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Lab4 机械臂逆运动学求解
+    lab4
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#逆运动学解析解" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆运动学解析解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#源代码" class="md-nav__link">
+    <span class="md-ellipsis">
+      源代码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="源代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#验证结果" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -943,6 +1006,27 @@
             Tech
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech/CTC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connectionist Temporal Classification (CTC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1013,6 +1097,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#逆运动学解析解" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆运动学解析解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#源代码" class="md-nav__link">
+    <span class="md-ellipsis">
+      源代码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="源代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#验证结果" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1029,37 +1154,18 @@
   
 
 
-<h1 id="lab4-机械臂逆运动学求解">Lab4 机械臂逆运动学求解<a class="headerlink" href="#lab4-机械臂逆运动学求解" title="Permanent link"></a></h1>
-<div class="admonition note">
-<p class="admonition-title">注意</p>
-<p>这里的解析解过程还在完善中，可能有错误，仅供参考。</p>
-</div>
-<p>逆运动学解：</p>
-<p>首先，我们可以写出各个变换矩阵：</p>
-<div class="arithmatex">\[
-T_1 = 
-\left(\begin{array}{cccc} \cos\left(a_{1}\right) &amp; 0 &amp; -\sin\left(a_{1}\right) &amp; 0 \\ \sin\left(a_{1}\right) &amp; 0 &amp; \cos\left(a_{1}\right) &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 230 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right) \\
-T_2 =
-\left(\begin{array}{cccc} \cos\left(a_{2}-\frac{\pi }{2}\right) &amp; -\sin\left(a_{2}-\frac{\pi }{2}\right) &amp; 0 &amp; 185\,\cos\left(a_{2}-\frac{\pi }{2}\right) \\ \sin\left(a_{2}-\frac{\pi }{2}\right) &amp; \cos\left(a_{2}-\frac{\pi }{2}\right) &amp; 0 &amp; 185\,\sin\left(a_{2}-\frac{\pi }{2}\right) \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right) \\
-T_3 =
-\left(\begin{array}{cccc} \cos\left(a_{3}\right) &amp; -\sin\left(a_{3}\right) &amp; 0 &amp; 170\,\cos\left(a_{3}\right) \\ \sin\left(a_{3}\right) &amp; \cos\left(a_{3}\right) &amp; 0 &amp; 170\,\sin\left(a_{3}\right) \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right) \\
-T_4 = 
-\left(\begin{array}{cccc} \cos\left(a_{4}+\frac{\pi }{2}\right) &amp; 0 &amp; \sin\left(a_{4}+\frac{\pi }{2}\right) &amp; 0 \\ \sin\left(a_{4}+\frac{\pi }{2}\right) &amp; 0 &amp; -\cos\left(a_{4}+\frac{\pi }{2}\right) &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 23 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right) \\
-T_5 = 
-\left(\begin{array}{cccc} \cos\left(a_{5}+\frac{\pi }{2}\right) &amp; 0 &amp; \sin\left(a_{5}+\frac{\pi }{2}\right) &amp; 0 \\ \sin\left(a_{5}+\frac{\pi }{2}\right) &amp; 0 &amp; -\cos\left(a_{5}+\frac{\pi }{2}\right) &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 77 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right) \\
-T_6 = 
-\left(\begin{array}{cccc} \cos\left(a_{6}\right) &amp; -\sin\left(a_{6}\right) &amp; 0 &amp; 0 \\ \sin\left(a_{6}\right) &amp; \cos\left(a_{6}\right) &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; \frac{171}{2} \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
-\]</div>
-<p>此时，我们已知的是末端的位姿<span class="arithmatex">\(T\)</span>，满足：</p>
+<h1 id="lab4">lab4<a class="headerlink" href="#lab4" title="Permanent link"></a></h1>
+<h2 id="逆运动学解析解">逆运动学解析解<a class="headerlink" href="#逆运动学解析解" title="Permanent link"></a></h2>
+<p>我们已知的是末端的位姿<span class="arithmatex">\(T\)</span>，满足：</p>
 <div class="arithmatex">\[
 T = T_0^6 = T_1^0T_2^1T_3^2T_4^3T_5^4T_6^5
 \]</div>
 <p>我们假设</p>
 <div class="arithmatex">\[
 T = 
-\left(\begin{array}{cccc} \mathrm{nx} &amp; \mathrm{ox} &amp; \mathrm{kx} &amp; \mathrm{px} \\ \mathrm{ny} &amp; \mathrm{oy} &amp; \mathrm{ky} &amp; \mathrm{py} \\ \mathrm{nz} &amp; \mathrm{oz} &amp; \mathrm{kz} &amp; \mathrm{pz} \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
+\left(\begin{array}{cccc} \mathrm{nx} &amp; \mathrm{ox} &amp; \mathrm{ax} &amp; \mathrm{dx}\\ \mathrm{ny} &amp; \mathrm{oy} &amp; \mathrm{ay} &amp; \mathrm{dy}\\ \mathrm{nz} &amp; \mathrm{oz} &amp; \mathrm{az} &amp; \mathrm{dz}\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
 \]</div>
-<p>其中，<span class="arithmatex">\(T_0^6\)</span>是末端的位姿，<span class="arithmatex">\(T_i^{i-1}\)</span>是第<span class="arithmatex">\(i\)</span>个关节的变换矩阵。</p>
+<p>其中，<span class="arithmatex">\(T_0^6\)</span>是末端的全局位姿，<span class="arithmatex">\(T_i^{i-1}\)</span>是第<span class="arithmatex">\(i\)</span>个关节的变换矩阵。</p>
 <p>通过这里，可以算出<span class="arithmatex">\(T_6^1\)</span>满足：</p>
 <div class="arithmatex">\[
 T_6^1 = T_2^1T_3^2T_4^3T_5^4T_6^5
@@ -1067,7 +1173,7 @@ T_6^1 = T_2^1T_3^2T_4^3T_5^4T_6^5
 <p>代入上面的变换矩阵，可以得到：</p>
 <div class="arithmatex">\[
 T_6^1 = 
-\left(\begin{array}{cccc} \frac{\cos\left(a_{2}+a_{3}+a_{4}-a_{6}\right)}{2}-\frac{\cos\left(a_{2}+a_{3}+a_{4}+a_{6}\right)}{2}-\cos\left(a_{6}\right)\,\sin\left(a_{5}\right)\,\cos\left(a_{2}+a_{3}+a_{4}\right) &amp; \frac{\sin\left(a_{2}+a_{3}+a_{4}+a_{6}\right)}{2}+\frac{\sin\left(a_{2}+a_{3}+a_{4}-a_{6}\right)}{2}+\sin\left(a_{5}\right)\,\sin\left(a_{6}\right)\,\cos\left(a_{2}+a_{3}+a_{4}\right) &amp; \frac{\cos\left(a_{2}+a_{3}+a_{4}+a_{5}\right)}{2}+\frac{\cos\left(a_{2}+a_{3}+a_{4}-a_{5}\right)}{2} &amp; \frac{171\,\cos\left(a_{2}+a_{3}+a_{4}+a_{5}\right)}{4}+170\,\sin\left(a_{2}+a_{3}\right)+\frac{171\,\cos\left(a_{2}+a_{3}+a_{4}-a_{5}\right)}{4}+185\,\sin\left(a_{2}\right)+77\,\sin\left(a_{2}+a_{3}+a_{4}\right) \\ \frac{\sin\left(a_{2}+a_{3}+a_{4}-a_{6}\right)}{2}-\frac{\sin\left(a_{2}+a_{3}+a_{4}+a_{6}\right)}{2}-\cos\left(a_{6}\right)\,\sin\left(a_{5}\right)\,\sin\left(a_{2}+a_{3}+a_{4}\right) &amp; \sin\left(a_{5}\right)\,\sin\left(a_{6}\right)\,\sin\left(a_{2}+a_{3}+a_{4}\right)-\frac{\cos\left(a_{2}+a_{3}+a_{4}-a_{6}\right)}{2}-\frac{\cos\left(a_{2}+a_{3}+a_{4}+a_{6}\right)}{2} &amp; \frac{\sin\left(a_{2}+a_{3}+a_{4}+a_{5}\right)}{2}+\frac{\sin\left(a_{2}+a_{3}+a_{4}-a_{5}\right)}{2} &amp; \frac{171\,\sin\left(a_{2}+a_{3}+a_{4}+a_{5}\right)}{4}-170\,\cos\left(a_{2}+a_{3}\right)+\frac{171\,\sin\left(a_{2}+a_{3}+a_{4}-a_{5}\right)}{4}-185\,\cos\left(a_{2}\right)-77\,\cos\left(a_{2}+a_{3}+a_{4}\right) \\ \cos\left(a_{5}\right)\,\cos\left(a_{6}\right) &amp; -\cos\left(a_{5}\right)\,\sin\left(a_{6}\right) &amp; \sin\left(a_{5}\right) &amp; \frac{171\,\sin\left(a_{5}\right)}{2}+23 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
+\left(\begin{array}{cccc} \sin\left(t_{2}+t_{3}+t_{4}\right)\,\sin\left(t_{6}\right)-\cos\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{6}\right)\,\sin\left(t_{5}\right) &amp; \sin\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{6}\right)+\cos\left(t_{2}+t_{3}+t_{4}\right)\,\sin\left(t_{5}\right)\,\sin\left(t_{6}\right) &amp; \cos\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{5}\right) &amp; \frac{17\,\sin\left(t_{2}+t_{3}\right)}{100}+\frac{37\,\sin\left(t_{2}\right)}{200}-\cos\left(t_{5}\right)\,\left(\frac{171\,\sin\left(t_{2}+t_{3}\right)\,\sin\left(t_{4}\right)}{2000}-\frac{171\,\cos\left(t_{2}+t_{3}\right)\,\cos\left(t_{4}\right)}{2000}\right)+\frac{77\,\cos\left(t_{2}+t_{3}\right)\,\sin\left(t_{4}\right)}{1000}+\frac{77\,\sin\left(t_{2}+t_{3}\right)\,\cos\left(t_{4}\right)}{1000}\\ -\cos\left(t_{2}+t_{3}+t_{4}\right)\,\sin\left(t_{6}\right)-\sin\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{6}\right)\,\sin\left(t_{5}\right) &amp; \sin\left(t_{2}+t_{3}+t_{4}\right)\,\sin\left(t_{5}\right)\,\sin\left(t_{6}\right)-\cos\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{6}\right) &amp; \sin\left(t_{2}+t_{3}+t_{4}\right)\,\cos\left(t_{5}\right) &amp; \frac{77\,\sin\left(t_{2}+t_{3}\right)\,\sin\left(t_{4}\right)}{1000}-\frac{37\,\cos\left(t_{2}\right)}{200}-\frac{17\,\cos\left(t_{2}+t_{3}\right)}{100}+\cos\left(t_{5}\right)\,\left(\frac{171\,\cos\left(t_{2}+t_{3}\right)\,\sin\left(t_{4}\right)}{2000}+\frac{171\,\sin\left(t_{2}+t_{3}\right)\,\cos\left(t_{4}\right)}{2000}\right)-\frac{77\,\cos\left(t_{2}+t_{3}\right)\,\cos\left(t_{4}\right)}{1000}\\ \cos\left(t_{5}\right)\,\cos\left(t_{6}\right) &amp; -\cos\left(t_{5}\right)\,\sin\left(t_{6}\right) &amp; \sin\left(t_{5}\right) &amp; \frac{171\,\sin\left(t_{5}\right)}{2000}+\frac{23}{1000}\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
 \]</div>
 <p>而这个结果等于：</p>
 <div class="arithmatex">\[
@@ -1076,54 +1182,60 @@ T_6^1 =
 <p>因为T是已知的，我们可以计算出等式的左边：</p>
 <div class="arithmatex">\[
 (T_1^0)^{-1}T =
-\left(\begin{array}{cccc} \mathrm{nx}\,\cos\left(a_{1}\right)+\mathrm{ny}\,\sin\left(a_{1}\right) &amp; \mathrm{ox}\,\cos\left(a_{1}\right)+\mathrm{oy}\,\sin\left(a_{1}\right) &amp; \mathrm{kx}\,\cos\left(a_{1}\right)+\mathrm{ky}\,\sin\left(a_{1}\right) &amp; \mathrm{px}\,\cos\left(a_{1}\right)+\mathrm{py}\,\sin\left(a_{1}\right) \\ -\mathrm{nz} &amp; -\mathrm{oz} &amp; -\mathrm{kz} &amp; 230-\mathrm{pz} \\ \mathrm{ny}\,\cos\left(a_{1}\right)-\mathrm{nx}\,\sin\left(a_{1}\right) &amp; \mathrm{oy}\,\cos\left(a_{1}\right)-\mathrm{ox}\,\sin\left(a_{1}\right) &amp; \mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) &amp; \mathrm{py}\,\cos\left(a_{1}\right)-\mathrm{px}\,\sin\left(a_{1}\right) \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
+\left(\begin{array}{cccc} \mathrm{nx}\,\cos\left(t_{1}\right)+\mathrm{ny}\,\sin\left(t_{1}\right) &amp; \mathrm{ox}\,\cos\left(t_{1}\right)+\mathrm{oy}\,\sin\left(t_{1}\right) &amp; \mathrm{ax}\,\cos\left(t_{1}\right)+\mathrm{ay}\,\sin\left(t_{1}\right) &amp; \mathrm{dx}\,\cos\left(t_{1}\right)+\mathrm{dy}\,\sin\left(t_{1}\right)\\ -\mathrm{nz} &amp; -\mathrm{oz} &amp; -\mathrm{az} &amp; \frac{23}{100}-\mathrm{dz}\\ \mathrm{ny}\,\cos\left(t_{1}\right)-\mathrm{nx}\,\sin\left(t_{1}\right) &amp; \mathrm{oy}\,\cos\left(t_{1}\right)-\mathrm{ox}\,\sin\left(t_{1}\right) &amp; \mathrm{ay}\,\cos\left(t_{1}\right)-\mathrm{ax}\,\sin\left(t_{1}\right) &amp; \mathrm{dy}\,\cos\left(t_{1}\right)-\mathrm{dx}\,\sin\left(t_{1}\right)\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
 \]</div>
 <p>对比这两个矩阵的不同形式，注意到这两个矩阵第三行的后面两项，即</p>
 <div class="arithmatex">\[
+\left\{
 \begin{align*}
-\mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) &amp;= \sin\left(a_{5}\right) \\
-\mathrm{py}\,\cos\left(a_{1}\right)-\mathrm{px}\,\sin\left(a_{1}\right) &amp;= \frac{171\,\sin\left(a_{5}\right)}{2}+23
+\mathrm{ay}\,\cos\left(t_{1}\right)-\mathrm{ax}\,\sin\left(t_{1}\right)
+&amp;= \sin\left(t_{5}\right)\\
+\mathrm{dy}\,\cos\left(t_{1}\right)-\mathrm{dx}\,\sin\left(t_{1}\right)
+&amp;= \frac{171\,\sin\left(t_{5}\right)}{2000}+\frac{23}{1000}
 \end{align*}
+\right.
 \]</div>
-<p>根据这个方程组，消去<span class="arithmatex">\(\sin\left(a_{5}\right)\)</span>，可以得到关于<span class="arithmatex">\(a_1\)</span>的方程：</p>
+<p>根据这个方程组，消去<span class="arithmatex">\(\sin\left(t_{5}\right)\)</span>，可以得到关于<span class="arithmatex">\(a_1\)</span>的方程：</p>
 <div class="arithmatex">\[
-\left(\mathrm{py} - 85.5 \mathrm{ky}\right)\cos\left(a_{1}\right) + \left(85.5 \mathrm{kx} - \mathrm{px}\right)\sin\left(a_{1}\right) = 23
+\left(\mathrm{dy} - 0.0855 \mathrm{ay}\right)\cos\left(t_{1}\right) + \left(0.0855 \mathrm{ax} - \mathrm{dx}\right)\sin\left(a_{1}\right) = 0.023
 \]</div>
 <p>从这个方程可以得到</p>
 <div class="arithmatex">\[
-a_1 = \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right)
+t_1 = \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right)
 \]</div>
 <p>其中</p>
 <div class="arithmatex">\[
 \begin{align*}
-d_x &amp;= \mathrm{px} - 85.5 \mathrm{kx} \\
-d_y &amp;= \mathrm{py} - 85.5 \mathrm{ky} \\
-d_2 &amp;= 23
+d_x &amp;= \mathrm{dx} - 0.0855 \mathrm{ax}\\
+d_y &amp;= \mathrm{dy} - 0.0855 \mathrm{ay}\\
+d_2 &amp;= 0.023
 \end{align*}
 \]</div>
-<p>这样，我们就可以得到<span class="arithmatex">\(a_1\)</span>的值。然后，我们可以得到<span class="arithmatex">\(a_5\)</span>的值：</p>
+<p>这样，我们就可以得到<span class="arithmatex">\(t_1\)</span>的值。然后，我们可以得到<span class="arithmatex">\(t_5\)</span>的值：</p>
 <div class="arithmatex">\[
-a_5 = \arcsin\left(\mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) \right) （\mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) \leq 1)
+t_5 = \arcsin\left(\mathrm{ay}\,\cos\left(t_{1}\right)-\mathrm{ax}\,\sin\left(t_{1}\right) \right) （\mathrm{ay}\,\cos\left(t_{1}\right)-\mathrm{ax}\,\sin\left(t_{1}\right) \leq 1)
 \]</div>
-<p>得到了<span class="arithmatex">\(a_1\)</span>和<span class="arithmatex">\(a_5\)</span>的值之后，我们可以得到<span class="arithmatex">\(a_6\)</span>的值，<span class="arithmatex">\(a_6\)</span>满足：</p>
+<p>得到了<span class="arithmatex">\(t_1\)</span>和<span class="arithmatex">\(t_5\)</span>的值之后，我们可以得到<span class="arithmatex">\(t_6\)</span>的值，<span class="arithmatex">\(t_6\)</span>满足：</p>
 <div class="arithmatex">\[
+\left\{
 \begin{align*}
-\cos\left(a_{5}\right)\,\cos\left(a_{6}\right) &amp;= \mathrm{ny}\,\cos\left(a_{1}\right)-\mathrm{nx}\,\sin\left(a_{1}\right)  \\
--\cos\left(a_{5}\right)\,\sin\left(a_{6}\right) &amp;= \mathrm{oy}\,\cos\left(a_{1}\right)-\mathrm{ox}\,\sin\left(a_{1}\right)  \\
+\cos\left(t_{5}\right)\,\cos\left(t_{6}\right) &amp;= \mathrm{ny}\,\cos\left(t_{1}\right)-\mathrm{nx}\,\sin\left(t_{1}\right)\\
+-\cos\left(t_{5}\right)\,\sin\left(t_{6}\right) &amp;= \mathrm{oy}\,\cos\left(t_{1}\right)-\mathrm{ox}\,\sin\left(t_{1}\right)
 \end{align*}
+\right.
 \]</div>
 <p>所以，</p>
 <div class="arithmatex">\[
-a_6 = \arctan2\left(\mathrm{ox}\,\sin\left(a_{1}\right)-\mathrm{oy}\,\cos\left(a_{1}\right), \mathrm{ny}\,\cos\left(a_{1}\right)-\mathrm{nx}\,\sin\left(a_{1}\right)\right)
+t_6 = \arctan2\left(\mathrm{ox}\,\sin\left(t_{1}\right)-\mathrm{oy}\,\cos\left(t_{1}\right), \mathrm{ny}\,\cos\left(t_{1}\right)-\mathrm{nx}\,\sin\left(t_{1}\right)\right)
 \]</div>
-<p>接下来，让我们一鼓作气，求出剩下的值。因为<span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(a_5\)</span>，<span class="arithmatex">\(a_6\)</span>已经求出，我们可以得到：</p>
+<p>接下来，让我们一鼓作气，求出剩下的值。因为<span class="arithmatex">\(t_1\)</span>，<span class="arithmatex">\(t_5\)</span>，<span class="arithmatex">\(t_6\)</span>已经求出，我们可以得到：</p>
 <div class="arithmatex">\[
 T_4^1 = T_2^1T_3^2T_4^3
 \]</div>
 <p>带入变换矩阵，可以得到：</p>
 <div class="arithmatex">\[
 T_4^1 =
-\left(\begin{array}{cccc} \cos\left(a_{2}+a_{3}+a_{4}\right) &amp; 0 &amp; \sin\left(a_{2}+a_{3}+a_{4}\right) &amp; 170\,\sin\left(a_{2}+a_{3}\right)+185\,\sin\left(a_{2}\right) \\ \sin\left(a_{2}+a_{3}+a_{4}\right) &amp; 0 &amp; -\cos\left(a_{2}+a_{3}+a_{4}\right) &amp; -170\,\cos\left(a_{2}+a_{3}\right)-185\,\cos\left(a_{2}\right) \\ 0 &amp; 1 &amp; 0 &amp; 23 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
+\left(\begin{array}{cccc} \cos\left(t_{2}+t_{3}+t_{4}\right) &amp; 0 &amp; \sin\left(t_{2}+t_{3}+t_{4}\right) &amp; \frac{17\,\sin\left(t_{2}+t_{3}\right)}{100}+\frac{37\,\sin\left(t_{2}\right)}{200}\\ \sin\left(t_{2}+t_{3}+t_{4}\right) &amp; 0 &amp; -\cos\left(t_{2}+t_{3}+t_{4}\right) &amp; -\frac{17\,\cos\left(t_{2}+t_{3}\right)}{100}-\frac{37\,\cos\left(t_{2}\right)}{200}\\ 0 &amp; 1 &amp; 0 &amp; \frac{23}{1000}\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)
 \]</div>
 <p>而和上面类似，这个式子还等于：</p>
 <div class="arithmatex">\[
@@ -1133,59 +1245,391 @@ T_4^1 =
 <p>这个东西能算，我们观察第一个<span class="arithmatex">\(T_4^1\)</span>公式的第一行的第四列和第二行的第四列，感觉好像能解。</p>
 <p>所以就代入过来：</p>
 <div class="arithmatex">\[
+\left\{
 \begin{align*}
-170\,\sin\left(a_{2}+a_{3}\right)+185\,\sin\left(a_{2}\right) &amp;= \mathrm{px}\,\cos\left(a_{1}\right)-\frac{171\,\mathrm{kx}\,\cos\left(a_{1}\right)}{2}-\frac{171\,\mathrm{ky}\,\sin\left(a_{1}\right)}{2}+\mathrm{py}\,\sin\left(a_{1}\right)-77\,\mathrm{ox}\,\cos\left(a_{1}\right)\,\cos\left(a_{6}\right)-77\,\mathrm{nx}\,\cos\left(a_{1}\right)\,\sin\left(a_{6}\right)-77\,\mathrm{oy}\,\cos\left(a_{6}\right)\,\sin\left(a_{1}\right)-77\,\mathrm{ny}\,\sin\left(a_{1}\right)\,\sin\left(a_{6}\right) \\  
--170\,\cos\left(a_{2}+a_{3}\right)-185\,\cos\left(a_{2}\right) &amp;= \frac{171\,\mathrm{kz}}{2}-\mathrm{pz}+77\,\mathrm{oz}\,\cos\left(a_{6}\right)+77\,\mathrm{nz}\,\sin\left(a_{6}\right)+230
+\frac{17\,\sin\left(t_{2}+t_{3}\right)}{100}+\frac{37\,\sin\left(t_{2}\right)}{200}
+&amp;= \mathrm{dx}\,\cos\left(t_{1}\right)-\frac{171\,\mathrm{ax}\,\cos\left(t_{1}\right)}{2000}-\frac{171\,\mathrm{ay}\,\sin\left(t_{1}\right)}{2000}+\mathrm{dy}\,\sin\left(t_{1}\right)-\frac{77\,\mathrm{ox}\,\cos\left(t_{1}\right)\,\cos\left(t_{6}\right)}{1000}-\frac{77\,\mathrm{nx}\,\cos\left(t_{1}\right)\,\sin\left(t_{6}\right)}{1000}-\frac{77\,\mathrm{oy}\,\cos\left(t_{6}\right)\,\sin\left(t_{1}\right)}{1000}-\frac{77\,\mathrm{ny}\,\sin\left(t_{1}\right)\,\sin\left(t_{6}\right)}{1000}\\
+-\frac{17\,\cos\left(t_{2}+t_{3}\right)}{100}-\frac{37\,\cos\left(t_{2}\right)}{200}
+&amp;= \frac{171\,\mathrm{az}}{2000}-\mathrm{dz}+\frac{77\,\mathrm{oz}\,\cos\left(t_{6}\right)}{1000}+\frac{77\,\mathrm{nz}\,\sin\left(t_{6}\right)}{1000}+\frac{23}{100}
 \end{align*}
+\right.
 \]</div>
 <p>这个式子右边的项来自那个非常非常复杂的式子，但好在通过前面的分析我们是知道它的值的。</p>
 <p>注意到，式子左边平方相加之后的结果是：</p>
 <div class="arithmatex">\[
-{C_{1}}^2+2\,\cos\left(a_{3}\right)\,C_{1}\,C_{2}+{C_{2}}^2
+{C_{1}}^2+2\,\cos\left(t_{3}\right)\,C_{1}\,C_{2}+{C_{2}}^2
 \]</div>
-<p>其中，<span class="arithmatex">\(C_1=170\)</span>，<span class="arithmatex">\(C_2=185\)</span>。所以我们在这里就能求出<span class="arithmatex">\(a_3\)</span>的值，即</p>
+<p>所以我们在这里就能求出<span class="arithmatex">\(t_3\)</span>的值，即</p>
 <div class="arithmatex">\[
-a_3 = \pm \arccos\left(\frac{A_1^2 + A_2^2 - C_1^2 - C_2^2}{2\,C_{1}\,C_{2}}\right)
+t_3 = \pm \arccos\left(\frac{A_1^2 + A_2^2 - C_1^2 - C_2^2}{2\,C_{1}\,C_{2}}\right)
 \]</div>
 <p>其中</p>
 <div class="arithmatex">\[
+\left\{
 \begin{align*}
-A_1 &amp;= \mathrm{px}\,\cos\left(a_{1}\right)-\frac{171\,\mathrm{kx}\,\cos\left(a_{1}\right)}{2}-\frac{171\,\mathrm{ky}\,\sin\left(a_{1}\right)}{2}+\mathrm{py}\,\sin\left(a_{1}\right)-77\,\mathrm{ox}\,\cos\left(a_{1}\right)\,\cos\left(a_{6}\right)-77\,\mathrm{nx}\,\cos\left(a_{1}\right)\,\sin\left(a_{6}\right)-77\,\mathrm{oy}\,\cos\left(a_{6}\right)\,\sin\left(a_{1}\right)-77\,\mathrm{ny}\,\sin\left(a_{1}\right)\,\sin\left(a_{6}\right) \\
--A_2 &amp;= \frac{171\,\mathrm{kz}}{2}-\mathrm{pz}+77\,\mathrm{oz}\,\cos\left(a_{6}\right)+77\,\mathrm{nz}\,\sin\left(a_{6}\right)+230
+A_1 &amp;= 
+\mathrm{dx}\,\cos\left(t_{1}\right)-\frac{171\,\mathrm{ax}\,\cos\left(t_{1}\right)}{2000}-\frac{171\,\mathrm{ay}\,\sin\left(t_{1}\right)}{2000}+\mathrm{dy}\,\sin\left(t_{1}\right)-\frac{77\,\mathrm{ox}\,\cos\left(t_{1}\right)\,\cos\left(t_{6}\right)}{1000}-\frac{77\,\mathrm{nx}\,\cos\left(t_{1}\right)\,\sin\left(t_{6}\right)}{1000}-\frac{77\,\mathrm{oy}\,\cos\left(t_{6}\right)\,\sin\left(t_{1}\right)}{1000}-\frac{77\,\mathrm{ny}\,\sin\left(t_{1}\right)\,\sin\left(t_{6}\right)}{1000}\\
+A_2 &amp;= -\frac{171\,\mathrm{az}}{2000}+\mathrm{dz}-\frac{77\,\mathrm{oz}\,\cos\left(t_{6}\right)}{1000}-\frac{77\,\mathrm{nz}\,\sin\left(t_{6}\right)}{1000}-\frac{23}{100}
 \end{align*}
+\right.
 \]</div>
-<p>这样，我们就可以得到<span class="arithmatex">\(a_3\)</span>的值。接下来，我们可以得到<span class="arithmatex">\(a_2\)</span>的值，这个值从上面那个矩阵的第一行的第三列就能的出来.。</p>
+<p>这样，我们就可以得到<span class="arithmatex">\(t_3\)</span>的值。接下来，我们可以得到<span class="arithmatex">\(t_2\)</span>的值，这个值从上面那个矩阵的第一行的第三列就能的出来.。</p>
 <div class="arithmatex">\[
-\left(C_1 \cos(a_3) + C_2 \right) \sin(a_2) + C_1 \sin(a_3) \cos(a_2) = A_1
+\left(C_1 \cos(t_3) + C_2 \right) \sin(t_2) + C_1 \sin(t_3) \cos(t_2) = A_1
 \]</div>
 <p>解得</p>
 <div class="arithmatex">\[
-a_2 = \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right)
+t_2 = \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right)
 \]</div>
 <p>其中</p>
 <div class="arithmatex">\[
+\left\{
 \begin{align*}
-d_x &amp;= -\left(C_1 \cos(a_3) + C_2 \right) \\
-d_y &amp;= C_1 \sin(a_3) \\
-d_2 &amp;= A_1
+d_x &amp;= -\left(C_1 \cos(t_3) + C_2 \right)\\
+d_y &amp;= C_1 \sin(t_3)\\
+d_2 &amp;= A_1\\
+C_1&amp;=0.170, C_2=0.185
 \end{align*}
+\right.
 \]</div>
-<p>这样，我们就可以得到<span class="arithmatex">\(a_2\)</span>的值。最后，我们可以得到<span class="arithmatex">\(a_4\)</span>的值，这个值从上面那个<span class="arithmatex">\(T_4^1\)</span>的第一行第一列和第二行第二列的比值就能求出来，显而易见：</p>
+<p>这样，我们就可以得到<span class="arithmatex">\(t_2\)</span>的值。最后，我们可以得到<span class="arithmatex">\(t_4\)</span>的值，这个值从上面那个<span class="arithmatex">\(T_4^1\)</span>的第一行第一列和第二行第二列的比值就能求出来，显而易见：</p>
 <div class="arithmatex">\[
-a_4 = \arctan2\left(\sin\left(a_2+a_3+a_4\right), \cos\left(a_2+a_3+a_4\right)\right) - a_2 - a_3
+\left\{
+\begin{align*}
+\cos\left(t_2+t_3+t_4\right) &amp;= \mathrm{ax}\,\cos\left(t_{1}\right)\,\cos\left(t_{5}\right)+\mathrm{ay}\,\cos\left(t_{5}\right)\,\sin\left(t_{1}\right)-\mathrm{nx}\,\cos\left(t_{1}\right)\,\cos\left(t_{6}\right)\,\sin\left(t_{5}\right)-\mathrm{ny}\,\cos\left(t_{6}\right)\,\sin\left(t_{1}\right)\,\sin\left(t_{5}\right)+\mathrm{ox}\,\cos\left(t_{1}\right)\,\sin\left(t_{5}\right)\,\sin\left(t_{6}\right)+\mathrm{oy}\,\sin\left(t_{1}\right)\,\sin\left(t_{5}\right)\,\sin\left(t_{6}\right)\\
+\sin\left(t_2+t_3+t_4\right) &amp;= \mathrm{nz}\,\cos\left(t_{6}\right)\,\sin\left(t_{5}\right)-\mathrm{az}\,\cos\left(t_{5}\right)-\mathrm{oz}\,\sin\left(t_{5}\right)\,\sin\left(t_{6}\right)
+\end{align*}
+\right.
+\]</div>
+<div class="arithmatex">\[
+t_4 = \arctan2\left(\sin\left(t_2+t_3+t_4\right), \cos\left(t_2+t_3+t_4\right)\right) - t_2 - t_3
 \]</div>
 <p>至此，我们已经求出了逆运动学的解析解。</p>
-<p>这部分的最后，我们做一个汇总：</p>
-<div class="arithmatex">\[
-\begin{align*}
-a_1 &amp;= \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right) \\
-a_5 &amp;= \arcsin\left(\mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) \right) （\mathrm{ky}\,\cos\left(a_{1}\right)-\mathrm{kx}\,\sin\left(a_{1}\right) \leq 1) \\
-a_6 &amp;= \arctan2\left(\mathrm{ox}\,\sin\left(a_{1}\right)-\mathrm{oy}\,\cos\left(a_{1}\right), \mathrm{ny}\,\cos\left(a_{1}\right)-\mathrm{nx}\,\sin\left(a_{1}\right)\right) \\
-a_3 &amp;= \pm \arccos\left(\frac{A_1^2 + A_2^2 - C_1^2 - C_2^2}{2\,C_{1}\,C_{2}}\right) \\
-a_2 &amp;= \arctan2\left(d_y, d_x\right) - \arctan2\left(d_2, \pm \sqrt{d_x^2+d_y^2-d_2^2} \right) \\
-a_4 &amp;= \arctan2\left(\sin\left(a_2+a_3+a_4\right), \cos\left(a_2+a_3+a_4\right)\right) - a_2 - a_3
-\end{align*}
-\]</div>
+<h2 id="源代码">源代码<a class="headerlink" href="#源代码" title="Permanent link"></a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-0-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-0-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-0-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-0-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-0-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-0-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-0-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-0-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-0-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-0-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-0-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-0-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-0-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-0-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-0-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-0-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-0-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span>
+<span class="normal"><a href="#__codelineno-0-115">115</a></span>
+<span class="normal"><a href="#__codelineno-0-116">116</a></span>
+<span class="normal"><a href="#__codelineno-0-117">117</a></span>
+<span class="normal"><a href="#__codelineno-0-118">118</a></span>
+<span class="normal"><a href="#__codelineno-0-119">119</a></span>
+<span class="normal"><a href="#__codelineno-0-120">120</a></span>
+<span class="normal"><a href="#__codelineno-0-121">121</a></span>
+<span class="normal"><a href="#__codelineno-0-122">122</a></span>
+<span class="normal"><a href="#__codelineno-0-123">123</a></span>
+<span class="normal"><a href="#__codelineno-0-124">124</a></span>
+<span class="normal"><a href="#__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#__codelineno-0-131">131</a></span>
+<span class="normal"><a href="#__codelineno-0-132">132</a></span>
+<span class="normal"><a href="#__codelineno-0-133">133</a></span>
+<span class="normal"><a href="#__codelineno-0-134">134</a></span>
+<span class="normal"><a href="#__codelineno-0-135">135</a></span>
+<span class="normal"><a href="#__codelineno-0-136">136</a></span>
+<span class="normal"><a href="#__codelineno-0-137">137</a></span>
+<span class="normal"><a href="#__codelineno-0-138">138</a></span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span>
+<span class="normal"><a href="#__codelineno-0-140">140</a></span>
+<span class="normal"><a href="#__codelineno-0-141">141</a></span>
+<span class="normal"><a href="#__codelineno-0-142">142</a></span>
+<span class="normal"><a href="#__codelineno-0-143">143</a></span>
+<span class="normal"><a href="#__codelineno-0-144">144</a></span>
+<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span>
+<span class="normal"><a href="#__codelineno-0-147">147</a></span>
+<span class="normal"><a href="#__codelineno-0-148">148</a></span>
+<span class="normal"><a href="#__codelineno-0-149">149</a></span>
+<span class="normal"><a href="#__codelineno-0-150">150</a></span>
+<span class="normal"><a href="#__codelineno-0-151">151</a></span>
+<span class="normal"><a href="#__codelineno-0-152">152</a></span>
+<span class="normal"><a href="#__codelineno-0-153">153</a></span>
+<span class="normal"><a href="#__codelineno-0-154">154</a></span>
+<span class="normal"><a href="#__codelineno-0-155">155</a></span>
+<span class="normal"><a href="#__codelineno-0-156">156</a></span>
+<span class="normal"><a href="#__codelineno-0-157">157</a></span>
+<span class="normal"><a href="#__codelineno-0-158">158</a></span>
+<span class="normal"><a href="#__codelineno-0-159">159</a></span>
+<span class="normal"><a href="#__codelineno-0-160">160</a></span>
+<span class="normal"><a href="#__codelineno-0-161">161</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">atan2</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">asin</span><span class="p">,</span> <span class="n">acos</span><span class="p">,</span> <span class="n">pi</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">class</span> <span class="nc">solution</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="n">locations</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">locations</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">thetas</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">thetas</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span> <span class="o">=</span> <span class="n">thetas</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">thetas</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">thetas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">locations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">locations</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">locations</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ny</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ox</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">oy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">oz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">def</span> <span class="nf">IK</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t1</span><span class="p">()</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="n">t5</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t5</span><span class="p">(</span><span class="n">t1</span><span class="o">=</span><span class="n">t1</span><span class="p">)</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="n">t6</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t6</span><span class="p">(</span><span class="n">t1</span><span class="o">=</span><span class="n">t1</span><span class="p">)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="n">t3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t3</span><span class="p">(</span><span class="n">t1</span><span class="o">=</span><span class="n">t1</span><span class="p">,</span> <span class="n">t6</span><span class="o">=</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t2</span><span class="p">(</span><span class="n">t1</span><span class="o">=</span><span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="o">=</span><span class="n">t3</span><span class="p">,</span> <span class="n">t6</span><span class="o">=</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="n">t4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_t4</span><span class="p">(</span><span class="n">t1</span><span class="o">=</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="o">=</span><span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="o">=</span><span class="n">t3</span><span class="p">,</span> <span class="n">t5</span><span class="o">=</span><span class="n">t5</span><span class="p">,</span> <span class="n">t6</span><span class="o">=</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="n">t4</span> <span class="o">-</span> <span class="n">pi</span> <span class="o">/</span><span class="mi">2</span> <span class="p">,</span> <span class="n">t5</span> <span class="o">-</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">t6</span><span class="p">]</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="k">def</span> <span class="nf">_cal_t1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">-</span> <span class="mf">0.0855</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">-</span> <span class="mf">0.0855</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="n">d2</span> <span class="o">=</span> <span class="mf">0.023</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="n">dt</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">-</span> <span class="n">d2</span> <span class="o">*</span> <span class="n">d2</span><span class="p">)</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">atan2</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">atan2</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="o">-</span><span class="n">dt</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="k">def</span> <span class="nf">_cal_t5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">):</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>        <span class="n">ay</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>        <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="k">return</span> <span class="n">asin</span><span class="p">(</span><span class="n">ay</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">ax</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">def</span> <span class="nf">_cal_t6</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">):</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="n">ox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ox</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="n">oy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oy</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nx</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ny</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="k">return</span> <span class="n">atan2</span><span class="p">(</span><span class="n">ox</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">oy</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="k">def</span> <span class="nf">_cal_t3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t6</span><span class="p">):</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="n">ay</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="n">ox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ox</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nx</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">oy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oy</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ny</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="n">az</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>        <span class="n">dz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dz</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="n">oz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oz</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nz</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="n">C1</span> <span class="o">=</span> <span class="mi">17</span><span class="o">/</span><span class="mi">100</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="n">C2</span> <span class="o">=</span> <span class="mi">37</span><span class="o">/</span><span class="mi">200</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.0855</span> <span class="o">*</span> <span class="n">ax</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.0855</span> <span class="o">*</span> <span class="n">ay</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>              <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> 
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>              <span class="o">-</span> <span class="mf">0.077</span> <span class="o">*</span> <span class="n">ox</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>              <span class="o">-</span> <span class="mf">0.077</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> 
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>              <span class="o">-</span> <span class="mf">0.077</span> <span class="o">*</span> <span class="n">oy</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>              <span class="o">-</span> <span class="mf">0.077</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>              <span class="p">)</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>        <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">171</span> <span class="o">*</span> <span class="n">az</span> <span class="o">/</span><span class="mi">2000</span> <span class="o">+</span> <span class="n">dz</span> <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">oz</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span> 
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>              <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">-</span> <span class="mf">0.23</span><span class="p">)</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="n">t3</span> <span class="o">=</span> <span class="n">acos</span><span class="p">((</span><span class="n">A1</span> <span class="o">*</span> <span class="n">A1</span> <span class="o">+</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">A2</span> <span class="o">-</span> <span class="n">C1</span> <span class="o">*</span> <span class="n">C1</span> <span class="o">-</span> <span class="n">C2</span> <span class="o">*</span> <span class="n">C2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">C1</span> <span class="o">*</span> <span class="n">C2</span><span class="p">))</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="k">return</span> <span class="n">t3</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="k">def</span> <span class="nf">_cal_t2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="n">t6</span><span class="p">):</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>        <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="n">ay</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>        <span class="n">ox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ox</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nx</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="n">oy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oy</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ny</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">171</span> <span class="o">*</span> <span class="n">ax</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2000</span> <span class="o">-</span> <span class="mi">171</span> <span class="o">*</span> <span class="n">ay</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">/</span><span class="mi">2000</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>              <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> 
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>              <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">ox</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>              <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>              <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">oy</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a>              <span class="o">-</span> <span class="mi">77</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a>              <span class="p">)</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a>        <span class="n">C1</span> <span class="o">=</span> <span class="mi">17</span><span class="o">/</span><span class="mi">100</span>
+<a id="__codelineno-0-121" name="__codelineno-0-121"></a>        <span class="n">C2</span> <span class="o">=</span> <span class="mi">37</span><span class="o">/</span><span class="mi">200</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>        <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">C1</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span> <span class="o">+</span> <span class="n">C2</span><span class="p">)</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>        <span class="n">dy</span> <span class="o">=</span> <span class="n">C1</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="n">d2</span> <span class="o">=</span> <span class="n">A1</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>        <span class="n">dt</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">-</span> <span class="n">d2</span> <span class="o">*</span> <span class="n">d2</span><span class="p">)</span>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>        <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>        <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">atan2</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>        <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">atan2</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="o">-</span><span class="n">dt</span><span class="p">)</span>
+<a id="__codelineno-0-131" name="__codelineno-0-131"></a>
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a>        <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-133" name="__codelineno-0-133"></a>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="k">def</span> <span class="nf">_cal_t4</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t5</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">,</span> <span class="n">t6</span><span class="p">):</span>
+<a id="__codelineno-0-135" name="__codelineno-0-135"></a>        <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="n">ay</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="n">az</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">az</span>
+<a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nx</span>
+<a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ny</span>
+<a id="__codelineno-0-140" name="__codelineno-0-140"></a>        <span class="n">ox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ox</span>
+<a id="__codelineno-0-141" name="__codelineno-0-141"></a>        <span class="n">oy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oy</span>
+<a id="__codelineno-0-142" name="__codelineno-0-142"></a>        <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nz</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="n">oz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">oz</span>
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a>        <span class="n">c234</span> <span class="o">=</span> <span class="p">(</span><span class="n">ax</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">+</span> 
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a>                <span class="n">ay</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span>
+<a id="__codelineno-0-146" name="__codelineno-0-146"></a>                <span class="n">nx</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">-</span>
+<a id="__codelineno-0-147" name="__codelineno-0-147"></a>                <span class="n">ny</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">+</span>
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a>                <span class="n">ox</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">+</span>
+<a id="__codelineno-0-149" name="__codelineno-0-149"></a>                <span class="n">oy</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">))</span>
+<a id="__codelineno-0-150" name="__codelineno-0-150"></a>        <span class="n">s234</span> <span class="o">=</span> <span class="p">(</span><span class="n">nz</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t6</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">-</span> <span class="n">az</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">-</span>
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a>                <span class="n">oz</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t5</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">t6</span><span class="p">))</span>
+<a id="__codelineno-0-152" name="__codelineno-0-152"></a>        <span class="n">t4</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">s234</span><span class="p">,</span> <span class="n">c234</span><span class="p">)</span> <span class="o">-</span> <span class="n">t2</span> <span class="o">-</span> <span class="n">t3</span>
+<a id="__codelineno-0-153" name="__codelineno-0-153"></a>        <span class="k">return</span> <span class="n">t4</span>
+<a id="__codelineno-0-154" name="__codelineno-0-154"></a>
+<a id="__codelineno-0-155" name="__codelineno-0-155"></a><span class="n">end_effector_pose</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.32</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.265</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.84</span><span class="p">]</span>
+<a id="__codelineno-0-156" name="__codelineno-0-156"></a>
+<a id="__codelineno-0-157" name="__codelineno-0-157"></a><span class="n">Solver</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="n">end_effector_pose</span><span class="p">)</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a>
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Solver</span><span class="o">.</span><span class="n">IK</span><span class="p">()</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="验证结果">验证结果<a class="headerlink" href="#验证结果" title="Permanent link"></a></h3>
+<p>经过仿真软件的验证，我们得到的逆运动学解析解是正确的。</p>
 
 
 
@@ -1206,7 +1650,7 @@ a_4 &amp;= \arctan2\left(\sin\left(a_2+a_3+a_4\right), \cos\left(a_2+a_3+a_4\rig
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-19</span>
   </span>
 
     
