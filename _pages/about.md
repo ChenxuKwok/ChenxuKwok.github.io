@@ -21,7 +21,7 @@ redirect_from:
 
 My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
-I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli </a> and PhD <a href='https://jlian2.github.io/'> Jiachen Lian </a>. My research interest includes AI for healthcare, speech recognition, and human-centered AI.
+I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'> Jiachen Lian</a>. My research interest includes AI for healthcare, speech recognition, and human-centered AI.
 
 
 
@@ -43,10 +43,9 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 </div>
 
 # 🎖 Honors and Awards
-- *Dec 2024* Zhejiang Government Scholarship.
-
-- *Nov 2024* Second Class Scholarship in Zhejiang University.
-- *Nov 2023* Second Class Scholarship in Zhejiang University.
+- *2024.12* Zhejiang Government Scholarship.
+- *2024.11* Second Class Scholarship in Zhejiang University.
+- *2023.11* Second Class Scholarship in Zhejiang University.
 
 # 📖 Educations
 - *2022.09 - Present*, B.S. in Electrical Engineering, Zhejiang University, China.
@@ -56,4 +55,5 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 # 💻 Experience
+- *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
 - *2024.06 - Present*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
