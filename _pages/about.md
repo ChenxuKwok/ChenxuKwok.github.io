@@ -26,19 +26,17 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 
 # 📝 Publications 
 
-<div class="paper-box">
-  <div class="paper-box-image">
-    <div>
-      <div class="badge">Interspeech 2025</div>
-      <img src="https://github.com/Berkeley-Speech-Group/DysfluentWFST/blob/main/resources/decoder-new.png?raw=true" alt="sym" width="100%">
-    </div>
-  </div>
-  <div class="paper-box-text" markdown="1">
-    [Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection](https://arxiv.org/abs/2505.16351)  
-    **Guo, C.**, Lian, J., Zhou, X., Zhang, J., Li, S., Ye, Z., ... & Anumanchipalli, G. (2025).  
-    [**Repo**](https://github.com/Berkeley-Speech-Group/DysfluentWFST) <strong><span class="show_paper_citations" data="DhtAFkwAAAAJ:ALROH1vI_8AC"></span></strong>
-    - A novel framework for zero-shot speech dysfluency transcription and detection, leveraging weighted finite-state transducers (WFST) to handle dysfluencies in speech data.
-  </div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025</div><img src='https://github.com/Berkeley-Speech-Group/DysfluentWFST/blob/main/resources/decoder-new.png?raw=true' alt="sym" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+[Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection](https://arxiv.org/abs/2505.16351)
+
+**Guo, C**., Lian, J., Zhou, X., Zhang, J., Li, S., Ye, Z., ... & Anumanchipalli, G. (2025).
+
+[**Repo**](https://github.com/Berkeley-Speech-Group/DysfluentWFST) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+- A novel framework for zero-shot speech dysfluency transcription and detection, leveraging weighted finite-state transducers (WFST) to handle dysfluencies in speech data.
+</div>
 </div>
 
 # 🎖 Honors and Awards
