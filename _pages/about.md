@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes AI for healthcare, speech recognition, and human-centered AI.
+I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for healthcare, speech recognition, and human-centered techniques.
 
 
 
@@ -40,7 +40,7 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 </div>
 
 # 🎖 Honors and Awards
-- *2024.12* Zhejiang Government Scholarship.
+- *2024.12* Zhejiang Provincial Government Scholarship.
 - *2024.11* Second Class Scholarship in Zhejiang University.
 - *2023.11* Second Class Scholarship in Zhejiang University.
 
