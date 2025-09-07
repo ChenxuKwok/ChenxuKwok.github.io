@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Chenxu Guo"
-description              : ""
+description              : "EE @ Zhejiang University | Visiting Student Researcher @ Berkeley Speech Group"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Chenxu Guo \n 郭宸旭"
   avatar           : "images/profile.jpg"
-  bio              : "EE @ Zhejiang University | Research Intern @ Berkeley Speech Group"
+  bio              : "EE @ Zhejiang University | Visiting Student Researcher @ Berkeley Speech Group"
   location         : "Hangzhou, China"
   employer         :
   pubmed           : 
@@ -42,7 +42,7 @@ author:
   instagram        :
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : # e.g., "linkedin username"
+  linkedin         : chenxu-guo-943883348 # e.g., "linkedin username"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : https://orcid.org/my-orcid?orcid=0009-0000-3899-3544
   pinterest        :
