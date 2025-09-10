@@ -17,8 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for healthcare, speech recognition, and human-centered techniques.
-
+I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech recognition, healthcare, and human-centered techniques.
 
 
 # 🔥 News
@@ -45,7 +44,7 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 - *2023.11* Second Class Scholarship in Zhejiang University.
 
 # 📖 Educations
-- *2022.09 - Present*, B.S. in Electrical Engineering, Zhejiang University, China.
+- *2022.09 - Present*, B.S. in Electrical Information Engineering, Zhejiang University, China.
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
@@ -53,4 +52,5 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 
 # 💻 Experience
 - *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
-- *2024.06 - Present*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
+- *2024.06 - 2025.08*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
+- *2025.09 - present*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA.
