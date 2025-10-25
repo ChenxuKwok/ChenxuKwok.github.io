@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a research intern in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech recognition, healthcare, and human-centered techniques.
+I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a visiting researcher in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech processing, healthcare, and human-centered techniques.
 
 
 # 🔥 News
@@ -25,7 +25,7 @@ I am a junior undergrad at <a href='http://ee.zju.edu.cn/englishee/'>College of 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025</div><img src='https://github.com/Berkeley-Speech-Group/DysfluentWFST/blob/main/resources/decoder-new.png?raw=true' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025 Oral</div><img src='https://github.com/Berkeley-Speech-Group/DysfluentWFST/blob/main/resources/decoder-new.png?raw=true' alt="sym" width="100%"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
