@@ -39,7 +39,7 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='figures/kfunction_paper.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='images/kfunction_paper.png' alt="sym" width="100%"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
