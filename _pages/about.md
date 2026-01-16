@@ -21,7 +21,8 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 
 
 # 🔥 News
-- *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.16351'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
+- *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
+- *2026.01*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
 
 # 📝 Publications 
 
@@ -35,6 +36,19 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 
 [**Repo**](https://github.com/Berkeley-Speech-Group/DysfluentWFST) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - A novel framework for zero-shot speech dysfluency transcription and detection, leveraging weighted finite-state transducers (WFST) to handle dysfluencies in speech data.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='figures/kfunction_paper.png' alt="sym" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+[K Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function](https://arxiv.org/pdf/2507.03043)
+
+**Guo, C.**, Li, S., Lian, J., Cho, C. J., Zhao, W., Zhou, X., ... & Anumanchipalli, G. (2025)
+
+[**Demo**](https://chenxukwok.github.io/K-function/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+- A comprehensive framework for evaluating children’s language function.
 </div>
 </div>
 
