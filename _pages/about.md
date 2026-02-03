@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a visiting researcher in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech processing, healthcare, and human-centered techniques.
+I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a visiting researcher in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech processing, healthcare, and human-centered techniques. For more details, please see my <a href='https://drive.google.com/file/d/1MTTwMzgJiMDS8XoQb2lNjH0h1Jfk0zqq/view?usp=drive_link'>CV</a>.
 
 
 # 🔥 News
