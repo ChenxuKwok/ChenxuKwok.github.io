@@ -52,6 +52,20 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 </div>
 </div>
 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/huper.png' alt="sym" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+[HuPER: A Human-Inspired Framework for Phonetic Perception](https://www.arxiv.org/abs/2602.01634)
+
+**Guo, C.**, Lian, J., Liu, Y. S., Huang, B. H., Narayanan, S., Cho, C. J., & Anumanchipalli, G. (2026)
+
+[**Repo**](https://github.com/HuPER29/HuPER) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+- HuPER is a human-inspired, evidence-controlled multi-path framework that integrates bottom-up acoustic–phonetic modeling with explicit top-down linguistic constraints.
+</div>
+</div>
+
 # 🎖 Honors and Awards
 - *2024.12* Zhejiang Provincial Government Scholarship.
 - *2024.11* Second Class Scholarship in Zhejiang University.
@@ -67,4 +81,4 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 # 💻 Experience
 - *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
 - *2024.06 - 2025.08*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
-- *2025.09 - present*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA.
+- *2025.09 - 2025.12*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA.
