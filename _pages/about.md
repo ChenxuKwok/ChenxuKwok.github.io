@@ -82,3 +82,4 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 - *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
 - *2024.06 - 2025.08*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
 - *2025.09 - 2025.12*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA.
+- *2026.02 - Present*, Algorithm Engineer Intern, Qwen, Beijing, China.
