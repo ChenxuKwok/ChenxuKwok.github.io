@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College of Electrical Engineering</a>, <a href='https://www.zju.edu.cn/english/'>Zhejiang University</a>. I work as a visiting researcher in Berkeley Speech Group with Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> and PhD <a href='https://jlian2.github.io/'>Jiachen Lian</a>. My research interest includes techs for speech processing, healthcare, and human-centered techniques. For more details, please see my <a href='https://drive.google.com/file/d/1If-MY3cw24go_5scGteGXg7wVyxsXR47/view?usp=drive_link'>CV</a>.
+I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/englishee/">College of Electrical Engineering</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>. I was a visiting researcher with the Berkeley Speech Group, working with Prof. <a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Krishna Anumanchipalli</a> and PhD student <a href="https://jlian2.github.io/">Jiachen Lian</a>. Since February 2026, I have been an algorithm engineering intern on the Qwen Foundation Model team, advised by Dr. <a href="https://jxu-thu.github.io/">Jin Xu</a>. My research interests lie in speech processing, healthcare applications, and human-centered machine learning. My CV is available <a href="https://drive.google.com/file/d/1SVVlAEZ72DC-dUd5fEihcQY7hNDuC7nJ/view?usp=sharing">here</a>.
 
 
 # 🔥 News
@@ -66,10 +66,10 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 </div>
 </div>
 
-# 🎖 Honors and Awards
+<!-- # 🎖 Honors and Awards
 - *2024.12* Zhejiang Provincial Government Scholarship.
 - *2024.11* Second Class Scholarship in Zhejiang University.
-- *2023.11* Second Class Scholarship in Zhejiang University.
+- *2023.11* Second Class Scholarship in Zhejiang University. -->
 
 # 📖 Educations
 - *2022.09 - Present*, B.S. in Electrical Information Engineering, Zhejiang University, China.
@@ -81,5 +81,5 @@ I am a senior undergraduate at <a href='http://ee.zju.edu.cn/englishee/'>College
 # 💻 Experience
 - *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
 - *2024.06 - 2025.08*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
-- *2025.09 - 2025.12*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA.
-- *2026.02 - Present*, Algorithm Engineer Intern, Qwen, Beijing, China.
+- *2025.09 - 2025.12*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA. Advisor: Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> .
+- *2026.02 - Present*, Algorithm Engineer Intern, Qwen, Beijing, China. Advisor: Dr. <a href='https://jxu-thu.github.io/'>Jin Xu</a>.
