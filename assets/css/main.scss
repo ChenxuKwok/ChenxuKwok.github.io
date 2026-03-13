@@ -96,27 +96,32 @@
     align-items: center;
     background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
     border: 1px solid #efefef;
-    border-radius: 18px;
-    box-shadow: 3px 3px 12px rgba(0, 0, 0, .12);
+    border-radius: 14px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .08);
     display: flex;
     justify-content: center;
-    min-height: 180px;
-    padding: 1.5rem;
+    aspect-ratio: 4 / 3;
+    max-width: 280px;
+    min-height: 0;
+    padding: 1.1rem 1.25rem 0.9rem;
 
     img {
         box-shadow: none !important;
-        max-height: 110px;
-        max-width: 100%;
+        max-height: 72px;
+        max-width: 72%;
         object-fit: contain !important;
+        width: auto;
     }
 }
 
 .logo-card--seal img {
-    max-height: 140px;
+    max-height: 96px;
+    max-width: 52%;
 }
 
 .logo-card--wide img {
-    max-height: 90px;
+    max-height: 58px;
+    max-width: 82%;
 }
 
 $scroll_offset : 2em;
