@@ -55,6 +55,11 @@
         display: flex;
         width: 100%;
         order: 2;
+        .paper-box-visual {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
         img {
             max-width: 400px;
             box-shadow: 3px 3px 6px #888;
@@ -85,6 +90,33 @@
     }
 
 
+}
+
+.logo-card {
+    align-items: center;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    border: 1px solid #efefef;
+    border-radius: 18px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, .12);
+    display: flex;
+    justify-content: center;
+    min-height: 180px;
+    padding: 1.5rem;
+
+    img {
+        box-shadow: none !important;
+        max-height: 110px;
+        max-width: 100%;
+        object-fit: contain !important;
+    }
+}
+
+.logo-card--seal img {
+    max-height: 140px;
+}
+
+.logo-card--wide img {
+    max-height: 90px;
 }
 
 $scroll_offset : 2em;

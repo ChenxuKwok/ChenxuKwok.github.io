@@ -24,7 +24,7 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 - *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
 - *2026.01*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
 
-# 📝 Publications 
+# 📝 Selected Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025 Oral</div><img src='images/wfst.png' alt="sym" width="100%"></div></div>
 
@@ -71,15 +71,57 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 - *2024.11* Second Class Scholarship in Zhejiang University.
 - *2023.11* Second Class Scholarship in Zhejiang University. -->
 
-# 📖 Educations
-- *2022.09 - Present*, B.S. in Electrical Information Engineering, Zhejiang University, China.
+# 📖 Education
+
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--seal'><div class="badge">2022.09 - Present</div><img src='images/zju.png' alt="Zhejiang University logo" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+**B.S. in Electrical Information Engineering**  
+[Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
+
+- Senior undergraduate student at the College of Electrical Engineering.
+</div>
+</div>
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 # 💻 Experience
-- *2023.09 - 2023.10*, Volunteer, Hangzhou Asian Games, Hangzhou, China.
-- *2024.06 - 2025.08*, Research Intern, Berkeley Speech Group, University of California, Berkeley, USA.
-- *2025.09 - 2025.12*, Visiting Student Researcher, Berkeley Speech Group, University of California, Berkeley, USA. Advisor: Prof.<a href='https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html'>Gopala Krishna Anumanchipalli</a> .
-- *2026.02 - Present*, Algorithm Engineer Intern, Qwen, Beijing, China. Advisor: Dr. <a href='https://jxu-thu.github.io/'>Jin Xu</a>.
+
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2023.09 - 2023.10</div><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+**Volunteer**  
+Hangzhou Asian Games, Hangzhou, China
+
+- Supported event operations during the 2022 Asian Games in Hangzhou.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--wide'><div class="badge">2024.06 - 2025.12</div><img src='images/BAIR.png' alt="BAIR logo" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+**Research Intern / Visiting Student Researcher**  
+[Berkeley Speech Group](https://bsg.berkeley.edu/), University of California, Berkeley, USA
+
+- *2024.06 - 2025.08*: Research Intern.
+- *2025.09 - 2025.12*: Visiting Student Researcher.
+- Advisor: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html).
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2026.02 - Present</div><img src='images/qwen_logo.jpeg' alt="Qwen logo" width="100%"></div></div>
+
+<div class='paper-box-text' markdown="1">
+
+**Algorithm Engineer Intern**  
+[Qwen](https://qwen.ai/), Beijing, China
+
+- Working on the Qwen foundation model team.
+- Advisor: Dr. [Jin Xu](https://jxu-thu.github.io/).
+</div>
+</div>
