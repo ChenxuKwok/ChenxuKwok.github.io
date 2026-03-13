@@ -73,8 +73,8 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📖 Education
 
-<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/zju.png' alt="Zhejiang University logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/zju.png' alt="Zhejiang University logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
@@ -92,8 +92,8 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 💻 Experience
 
-<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
@@ -105,8 +105,8 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/berkeley.png' alt="Berkeley logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/berkeley.png' alt="Berkeley logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
@@ -120,8 +120,8 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/qwen_logo.jpeg' alt="Qwen logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/qwen_logo.jpeg' alt="Qwen logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
