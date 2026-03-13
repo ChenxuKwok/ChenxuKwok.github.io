@@ -111,7 +111,7 @@ Hangzhou Asian Games, Hangzhou, China
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **Research Intern / Visiting Student Researcher**  
-[Berkeley Speech Group](https://bsg.berkeley.edu/), University of California, Berkeley, USA
+Berkeley Speech Group, University of California, Berkeley, USA
 
 - *2024.06 - 2025.12*
 - *2024.06 - 2025.08*: Research Intern.
