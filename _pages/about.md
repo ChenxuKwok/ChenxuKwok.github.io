@@ -26,7 +26,7 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025 Oral</div><img src='https://github.com/Berkeley-Speech-Group/DysfluentWFST/blob/main/resources/decoder-new.png?raw=true' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025 Oral</div><img src='images/wfst.png' alt="sym" width="100%"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
