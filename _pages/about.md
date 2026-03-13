@@ -73,10 +73,10 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📖 Education
 
-<div class='cv-item'>
-<div class='cv-item-logo'><img src='images/zju.png' alt="Zhejiang University logo"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/zju.png' alt="Zhejiang University logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
 
-<div class='cv-item-text' markdown="1">
+<div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **B.S. in Electrical Information Engineering**  
 [Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
@@ -92,10 +92,10 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 💻 Experience
 
-<div class='cv-item'>
-<div class='cv-item-logo'><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
 
-<div class='cv-item-text' markdown="1">
+<div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **Volunteer**  
 Hangzhou Asian Games, Hangzhou, China
@@ -105,10 +105,10 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='cv-item'>
-<div class='cv-item-logo'><img src='images/BAIR.png' alt="BAIR logo"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/berkeley.png' alt="Berkeley logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
 
-<div class='cv-item-text' markdown="1">
+<div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **Research Intern / Visiting Student Researcher**  
 [Berkeley Speech Group](https://bsg.berkeley.edu/), University of California, Berkeley, USA
@@ -120,10 +120,10 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='cv-item'>
-<div class='cv-item-logo'><img src='images/qwen_logo.jpeg' alt="Qwen logo"></div>
+<div class='cv-item' style="display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
+<div class='cv-item-logo' style="width:180px;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #efefef;background:#fafafa;box-shadow:3px 3px 6px #888;"><img src='images/qwen_logo.jpeg' alt="Qwen logo" style="width:130px;height:130px;object-fit:contain;display:block;"></div>
 
-<div class='cv-item-text' markdown="1">
+<div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **Algorithm Engineer Intern**  
 [Qwen](https://qwen.ai/), Beijing, China
