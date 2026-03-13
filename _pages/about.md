@@ -24,7 +24,9 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 - *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
 - *2026.01*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
 
-# 📝 Selected Publications 
+<span class='anchor' id='publications'></span>
+
+# 📝 Selected Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Interspeech 2025 Oral</div><img src='images/wfst.png' alt="sym" width="100%"></div></div>
 
