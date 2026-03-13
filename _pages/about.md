@@ -73,13 +73,14 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📖 Education
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2022.09 - Present</div><img src='images/zju-card.png' alt="Zhejiang University logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/zju.png' alt="Zhejiang University logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
 **B.S. in Electrical Information Engineering**  
 [Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
 
+- *2022.09 - Present*
 - Senior undergraduate student at the College of Electrical Engineering.
 </div>
 </div>
@@ -90,37 +91,40 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 💻 Experience
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2023.09 - 2023.10</div><img src='images/asian-games-card.png' alt="Hangzhou Asian Games logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
 **Volunteer**  
 Hangzhou Asian Games, Hangzhou, China
 
+- *2023.09 - 2023.10*
 - Supported event operations during the 2022 Asian Games in Hangzhou.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2024.06 - 2025.12</div><img src='images/bair-card.png' alt="BAIR logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/BAIR.png' alt="BAIR logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
 **Research Intern / Visiting Student Researcher**  
 [Berkeley Speech Group](https://bsg.berkeley.edu/), University of California, Berkeley, USA
 
+- *2024.06 - 2025.12*
 - *2024.06 - 2025.08*: Research Intern.
 - *2025.09 - 2025.12*: Visiting Student Researcher.
 - Advisor: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html).
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2026.02 - Present</div><img src='images/qwen-card.png' alt="Qwen logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/qwen_logo.jpeg' alt="Qwen logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
 **Algorithm Engineer Intern**  
 [Qwen](https://qwen.ai/), Beijing, China
 
+- *2026.02 - Present*
 - Working on the Qwen foundation model team.
 - Advisor: Dr. [Jin Xu](https://jxu-thu.github.io/).
 </div>
