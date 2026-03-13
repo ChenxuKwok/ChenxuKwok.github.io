@@ -92,25 +92,62 @@
 
 }
 
-.logo-card {
+.cv-item {
     align-items: center;
+    border-bottom: 1px #efefef solid;
     display: flex;
+    gap: 1.75rem;
+    padding: 1.5em 0;
+}
+
+.cv-item-logo {
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #efefef;
+    box-shadow: 3px 3px 6px #888;
+    display: flex;
+    flex: 0 0 180px;
+    height: 180px;
     justify-content: center;
-    height: 150px;
-    margin: 0;
-    max-width: 400px;
-    overflow: visible;
-    padding: 0;
-    width: 100%;
+    width: 180px;
 
     img {
         box-shadow: none !important;
-        display: block;
-        height: 110px;
-        max-height: 110px;
-        max-width: 100%;
-        object-fit: contain !important;
+        height: auto;
+        max-height: 132px;
+        max-width: 132px;
+        object-fit: contain;
         width: auto;
+    }
+}
+
+.cv-item-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+@include breakpoint($small) {
+    .cv-item {
+        gap: 1.25rem;
+    }
+
+    .cv-item-logo {
+        flex-basis: 160px;
+        height: 160px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 560px) {
+    .cv-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cv-item-logo {
+        flex-basis: 140px;
+        height: 140px;
+        width: 140px;
     }
 }
 

@@ -73,9 +73,10 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📖 Education
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/zju.png' alt="Zhejiang University logo"></div></div>
+<div class='cv-item'>
+<div class='cv-item-logo'><img src='images/zju.png' alt="Zhejiang University logo"></div>
 
-<div class='paper-box-text' markdown="1">
+<div class='cv-item-text' markdown="1">
 
 **B.S. in Electrical Information Engineering**  
 [Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
@@ -91,9 +92,10 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 💻 Experience
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo"></div></div>
+<div class='cv-item'>
+<div class='cv-item-logo'><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo"></div>
 
-<div class='paper-box-text' markdown="1">
+<div class='cv-item-text' markdown="1">
 
 **Volunteer**  
 Hangzhou Asian Games, Hangzhou, China
@@ -103,9 +105,10 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/BAIR.png' alt="BAIR logo"></div></div>
+<div class='cv-item'>
+<div class='cv-item-logo'><img src='images/BAIR.png' alt="BAIR logo"></div>
 
-<div class='paper-box-text' markdown="1">
+<div class='cv-item-text' markdown="1">
 
 **Research Intern / Visiting Student Researcher**  
 [Berkeley Speech Group](https://bsg.berkeley.edu/), University of California, Berkeley, USA
@@ -117,9 +120,10 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><img src='images/qwen_logo.jpeg' alt="Qwen logo"></div></div>
+<div class='cv-item'>
+<div class='cv-item-logo'><img src='images/qwen_logo.jpeg' alt="Qwen logo"></div>
 
-<div class='paper-box-text' markdown="1">
+<div class='cv-item-text' markdown="1">
 
 **Algorithm Engineer Intern**  
 [Qwen](https://qwen.ai/), Beijing, China
