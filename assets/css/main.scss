@@ -96,32 +96,41 @@
     align-items: center;
     background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
     border: 1px solid #efefef;
-    border-radius: 14px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, .08);
+    border-radius: 0;
+    box-shadow: 3px 3px 6px #888;
     display: flex;
     justify-content: center;
-    aspect-ratio: 4 / 3;
-    max-width: 280px;
-    min-height: 0;
-    padding: 1.1rem 1.25rem 0.9rem;
+    height: 150px;
+    margin: 0;
+    max-width: 400px;
+    overflow: hidden;
+    padding: 1rem 1.25rem;
+    width: 100%;
 
     img {
         box-shadow: none !important;
-        max-height: 72px;
-        max-width: 72%;
+        display: block;
+        height: auto;
+        max-height: 96px;
+        max-width: 220px;
         object-fit: contain !important;
         width: auto;
     }
 }
 
-.logo-card--seal img {
-    max-height: 96px;
-    max-width: 52%;
+.logo-card--square img {
+    max-height: 108px;
+    max-width: 108px;
 }
 
 .logo-card--wide img {
-    max-height: 58px;
-    max-width: 82%;
+    max-height: 82px;
+    max-width: 250px;
+}
+
+.logo-card--tall img {
+    max-height: 112px;
+    max-width: 150px;
 }
 
 $scroll_offset : 2em;
