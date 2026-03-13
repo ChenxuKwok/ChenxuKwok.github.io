@@ -73,7 +73,7 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 📖 Education
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--square'><div class="badge">2022.09 - Present</div><img src='images/zju.png' alt="Zhejiang University logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2022.09 - Present</div><img src='images/zju-card.png' alt="Zhejiang University logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
@@ -90,7 +90,7 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 # 💻 Experience
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--tall'><div class="badge">2023.09 - 2023.10</div><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2023.09 - 2023.10</div><img src='images/asian-games-card.png' alt="Hangzhou Asian Games logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
@@ -101,7 +101,7 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--wide'><div class="badge">2024.06 - 2025.12</div><img src='images/BAIR.png' alt="BAIR logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2024.06 - 2025.12</div><img src='images/bair-card.png' alt="BAIR logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
@@ -114,7 +114,7 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card logo-card--square'><div class="badge">2026.02 - Present</div><img src='images/qwen_logo.jpeg' alt="Qwen logo"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div class='paper-box-visual logo-card'><div class="badge">2026.02 - Present</div><img src='images/qwen-card.png' alt="Qwen logo"></div></div>
 
 <div class='paper-box-text' markdown="1">
 

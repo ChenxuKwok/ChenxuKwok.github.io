@@ -110,27 +110,12 @@
     img {
         box-shadow: none !important;
         display: block;
-        height: auto;
-        max-height: 96px;
-        max-width: 220px;
+        height: 100%;
+        max-height: none;
+        max-width: none;
         object-fit: contain !important;
-        width: auto;
+        width: 100%;
     }
-}
-
-.logo-card--square img {
-    max-height: 108px;
-    max-width: 108px;
-}
-
-.logo-card--wide img {
-    max-height: 82px;
-    max-width: 250px;
-}
-
-.logo-card--tall img {
-    max-height: 112px;
-    max-width: 150px;
 }
 
 $scroll_offset : 2em;
