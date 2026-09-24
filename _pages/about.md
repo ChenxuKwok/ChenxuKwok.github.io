@@ -116,7 +116,6 @@ Hangzhou Asian Games, Hangzhou, China
 **Research Intern / Visiting Student Researcher**  
 Berkeley Speech Group, University of California, Berkeley, USA
 
-- *2024.06 - 2025.12*
 - *2024.06 - 2025.08*: Research Intern.
 - *2025.09 - 2025.12*: Visiting Student Researcher.
 - Advisor: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html).
