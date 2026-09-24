@@ -17,12 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/englishee/">College of Electrical Engineering</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>. I was a visiting researcher with the Berkeley Speech Group, working with Prof. <a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Krishna Anumanchipalli</a> and PhD student <a href="https://jlian2.github.io/">Jiachen Lian</a>. Since February 2026, I have been an algorithm engineering intern on the Qwen Foundation Model team, advised by Dr. <a href="https://jxu-thu.github.io/">Jin Xu</a>. My research interests lie in speech processing, healthcare applications, and human-centered machine learning. My CV is available <a href="https://drive.google.com/file/d/1SVVlAEZ72DC-dUd5fEihcQY7hNDuC7nJ/view?usp=sharing">here</a>.
+I received my B.Eng. degree from the <a href="http://ee.zju.edu.cn/englishee/">College of Electrical Engineering</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in July 2026. I was a visiting researcher with the Berkeley Speech Group, working with Prof. <a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Krishna Anumanchipalli</a> and PhD student <a href="https://jlian2.github.io/">Jiachen Lian</a>. From February to July 2026, I was an algorithm engineering intern on the Qwen Foundation Model team, advised by Dr. <a href="https://jxu-thu.github.io/">Jin Xu</a>. My research interests lie in speech processing, healthcare applications, and human-centered machine learning. My CV is available <a href="https://drive.google.com/file/d/1SVVlAEZ72DC-dUd5fEihcQY7hNDuC7nJ/view?usp=sharing">here</a>.
 
 
 # 🔥 News
 - *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
 - *2026.01*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
+- *2026.09*: &nbsp;🎉🎉 My first-author paper <a href='https://www.arxiv.org/abs/2602.01634'>HuPER: A Human-Inspired Framework for Phonetic Perception</a> is accepted by NeurIPS 2026!
 
 <span class='anchor' id='publications'></span>
 
@@ -55,7 +56,7 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/huper.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2026</div><img src='images/huper.png' alt="sym" width="100%"></div></div>
 
 <div class='paper-box-text' markdown="1">
 
@@ -80,11 +81,11 @@ I am a senior undergraduate student at the <a href="http://ee.zju.edu.cn/english
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
-**B.S. in Electrical Information Engineering**  
+**B.Eng. in Electrical Information Engineering**  
 [Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
 
-- *2022.09 - Present*
-- Senior undergraduate student at the College of Electrical Engineering.
+- *2022.09 - 2026.07*
+- Graduated with a Bachelor of Engineering degree.
 </div>
 </div>
 
@@ -130,8 +131,8 @@ Berkeley Speech Group, University of California, Berkeley, USA
 **Algorithm Engineer Intern**  
 [Qwen](https://qwen.ai/), Beijing, China
 
-- *2026.02 - Present*
-- Working on the Qwen foundation model team.
+- *2026.02 - 2026.07*
+- Worked on the Qwen foundation model team.
 - Advisor: Dr. [Jin Xu](https://jxu-thu.github.io/).
 </div>
 </div>
