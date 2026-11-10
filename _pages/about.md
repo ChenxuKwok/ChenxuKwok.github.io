@@ -17,7 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I received my B.Eng. degree from the <a href="http://ee.zju.edu.cn/englishee/">College of Electrical Engineering</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in July 2026. I was a visiting researcher with the Berkeley Speech Group, working with Prof. <a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Krishna Anumanchipalli</a> and PhD student <a href="https://jlian2.github.io/">Jiachen Lian</a>. From February to July 2026, I was an algorithm engineering intern on the Qwen Foundation Model team, advised by Dr. <a href="https://jxu-thu.github.io/">Jin Xu</a>. My research interests lie in speech processing, healthcare applications, and human-centered machine learning. My CV is available <a href="https://drive.google.com/file/d/1SVVlAEZ72DC-dUd5fEihcQY7hNDuC7nJ/view?usp=sharing">here</a>.
+I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2022—just as <a href="https://en.wikipedia.org/wiki/GPT-3#:~:text=GPT%2D3.5-,GPT%2D3.5,-edit">GPT-3.5</a> reshaped the world—and have been fortunate to explore the frontiers of AI ever since. Over the past 2 years, my research centered on speech processing and healthcare, where I worked with Prof. <a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Anumanchipalli</a> and Dr. <a href="https://jlian2.github.io/">Jiachen Lian</a> at UC Berkeley (Berkeley Speech Group / BAIR) and contributed to the <a href="https://qwen.ai/blog?id=qwen3.8-omni-flash#:~:text=Real%2DTime%20Speaking%20Practice">Qwen Omni</a> team at Alibaba. I am now applying deep learning to quantitative finance.
+
 
 
 # 🔥 News
