@@ -89,7 +89,7 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
   </header>
 
   <section class="cv-role">
-    <header><h3>B.Eng. in Electrical Information Engineering</h3><span>Sep 2022 – Jul 2026</span></header>
+    <header><h3>B.Eng. in Electronic Information Engineering</h3><span>Sep 2022 – Jul 2026</span></header>
   </section>
 </section>
 
