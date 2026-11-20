@@ -114,12 +114,16 @@ Hangzhou Asian Games, Hangzhou, China
 
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
-**Research Intern / Visiting Student Researcher**  
+**Berkeley Artificial Intelligence Research (BAIR)**<br>
 Berkeley Speech Group, University of California, Berkeley, USA
 
-- *2024.06 - 2025.08*: Research Intern.
-- *2025.09 - 2025.12*: Visiting Student Researcher.
-- Advisor: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html).
+Research advisors: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html) and Dr. [Jiachen Lian](https://jlian2.github.io/).
+
+**Visiting Student Researcher** · *2025.09 - 2025.12*<br>
+Proposed and co-led [HuPER](https://arxiv.org/abs/2602.01634), a framework inspired by human speech perception that combines acoustic evidence with linguistic knowledge. With 100 hours of training data, it achieved state-of-the-art phonetic error rates on five English benchmarks and transferred zero-shot to 95 unseen languages. [NeurIPS 2026 poster (first author)](https://neurips.cc/virtual/2026/loc/sydney/poster/154021)
+
+**Research Intern** · *2024.07 - 2025.09*<br>
+Developed Dysfluent WFST, a zero-shot decoder that transcribes phonemes and detects speech dysfluencies in the same pass. The decoder was integrated into UCSF's AI pipeline for primary progressive aphasia (PPA) diagnosis. [Interspeech 2025 oral paper (first author)](https://www.isca-archive.org/interspeech_2025/guo25d_interspeech.html)
 </div>
 </div>
 
@@ -129,10 +133,10 @@ Berkeley Speech Group, University of California, Berkeley, USA
 <div class='cv-item-text' style="min-width:0;" markdown="1">
 
 **Algorithm Engineer Intern**  
-[Qwen](https://qwen.ai/), Beijing, China
+[Qwen Omni, Alibaba](https://qwen.ai/), Beijing, China
 
 - *2026.02 - 2026.07*
-- Worked on the Qwen foundation model team.
-- Advisor: Dr. [Jin Xu](https://jxu-thu.github.io/).
+- Core contributor to phone-level speech perception in Qwen3.8-Omni-Flash-Realtime, enabling the model to recognize individual speech sounds and assess pronunciation during real-time speaking practice. [Product launch](https://qwen.ai/blog?id=qwen3.8-omni-flash)
+- Mentors: Dr. [Jin Xu](https://jxu-thu.github.io/) and Zhifang Guo.
 </div>
 </div>
