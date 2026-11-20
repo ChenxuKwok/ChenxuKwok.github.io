@@ -22,7 +22,7 @@ I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2
 
 
 # 🔥 News
-- *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
+- *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.16351'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
 - *2026.01*: &nbsp;🎉🎉 My co-first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
 - *2026.09*: &nbsp;🎉🎉 My co-first-author paper <a href='https://www.arxiv.org/abs/2602.01634'>HuPER: A Human-Inspired Framework for Phonetic Perception</a> is accepted by NeurIPS 2026!
 
