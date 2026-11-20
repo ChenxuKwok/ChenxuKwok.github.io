@@ -79,18 +79,19 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 # 📖 Education
 
-<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/zju.png' alt="Zhejiang University logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
+<section class="cv-entry" aria-labelledby="zju-title">
+  <header class="cv-header">
+    <img src="images/zju.png" alt="">
+    <div>
+      <h2 id="zju-title"><a href="https://www.zju.edu.cn/english/">Zhejiang University</a></h2>
+      <p>Hangzhou, China</p>
+    </div>
+  </header>
 
-<div class='cv-item-text' style="min-width:0;" markdown="1">
-
-**B.Eng. in Electrical Information Engineering**  
-[Zhejiang University](https://www.zju.edu.cn/english/), Hangzhou, China
-
-- *2022.09 - 2026.07*
-- Graduated with a Bachelor of Engineering degree.
-</div>
-</div>
+  <section class="cv-role">
+    <header><h3>B.Eng. in Electrical Information Engineering</h3><span>Sep 2022 – Jul 2026</span></header>
+  </section>
+</section>
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
@@ -98,21 +99,23 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 # 💻 Experience
 
-<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/2022_Asian_Games_logo.svg' alt="Hangzhou Asian Games logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
+<section class="cv-entry" aria-labelledby="asian-games-title">
+  <header class="cv-header">
+    <img src="images/2022_Asian_Games_logo.svg" alt="">
+    <div>
+      <h2 id="asian-games-title">Hangzhou Asian Games</h2>
+      <p>Hangzhou, China</p>
+    </div>
+  </header>
 
-<div class='cv-item-text' style="min-width:0;" markdown="1">
+  <section class="cv-role">
+    <header><h3>Volunteer</h3><span>Sep – Oct 2023</span></header>
+    <p>Supported event operations during the 2022 Asian Games in Hangzhou.</p>
+  </section>
+</section>
 
-**Volunteer**  
-Hangzhou Asian Games, Hangzhou, China
-
-- *2023.09 - 2023.10*
-- Supported event operations during the 2022 Asian Games in Hangzhou.
-</div>
-</div>
-
-<section class="bair-entry" aria-labelledby="bair-title">
-  <header class="bair-header">
+<section class="cv-entry" aria-labelledby="bair-title">
+  <header class="cv-header">
     <img src="images/berkeley.png" alt="">
     <div>
       <h2 id="bair-title">Berkeley Artificial Intelligence Research (BAIR)</h2>
@@ -120,32 +123,35 @@ Hangzhou Asian Games, Hangzhou, China
     </div>
   </header>
 
-  <section class="bair-role">
+  <section class="cv-role">
     <header><h3>Visiting Student Researcher</h3><span>Sep – Dec 2025</span></header>
     <p>Proposed and co-led <strong>HuPER</strong>, a framework that combines acoustic evidence with linguistic knowledge to model how people perceive speech sounds.</p>
     <p>Trained on 100 hours of speech, HuPER achieved state-of-the-art phonetic feature error rates on five English benchmarks and transferred to 94 unseen languages without additional training.</p>
     <a href="https://arxiv.org/abs/2602.01634">Paper</a> · <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/154021">NeurIPS 2026 poster</a> · Co-first author
   </section>
 
-  <section class="bair-role">
+  <section class="cv-role">
     <header><h3>Research Intern</h3><span>Jul 2024 – Sep 2025</span></header>
     <p>Developed <strong>Dysfluent WFST</strong>, a zero-shot decoder that transcribes phonemes and detects speech dysfluencies in one pass. UCSF integrated it into its AI pipeline for diagnosing primary progressive aphasia.</p>
     <a href="https://www.isca-archive.org/interspeech_2025/guo25d_interspeech.html">Interspeech 2025 oral paper</a> · First author
   </section>
 
-  <p class="bair-advisors">Research advisors · Prof. <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html">Gopala Krishna Anumanchipalli</a> and Dr. <a href="https://jlian2.github.io/">Jiachen Lian</a></p>
+  <p class="cv-advisors">Research advisors · Prof. <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html">Gopala Krishna Anumanchipalli</a> and Dr. <a href="https://jlian2.github.io/">Jiachen Lian</a></p>
 </section>
 
-<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/qwen_logo.jpeg' alt="Qwen logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
+<section class="cv-entry" aria-labelledby="qwen-title">
+  <header class="cv-header">
+    <img src="images/qwen_logo.jpeg" alt="">
+    <div>
+      <h2 id="qwen-title"><a href="https://qwen.ai/">Qwen Omni, Alibaba</a></h2>
+      <p>Beijing, China</p>
+    </div>
+  </header>
 
-<div class='cv-item-text' style="min-width:0;" markdown="1">
-
-**Algorithm Engineer Intern**  
-[Qwen Omni, Alibaba](https://qwen.ai/), Beijing, China
-
-- *2026.02 - 2026.07*
-- Core contributor to phone-level speech perception in Qwen3.8-Omni-Flash-Realtime, enabling the model to recognize individual speech sounds and assess pronunciation during real-time speaking practice. [Product launch](https://qwen.ai/blog?id=qwen3.8-omni-flash)
-- Mentors: Dr. [Jin Xu](https://jxu-thu.github.io/) and [Zhifang Guo](https://965694547.github.io/).
-</div>
-</div>
+  <section class="cv-role">
+    <header><h3>Algorithm Engineer Intern</h3><span>Feb – Jul 2026</span></header>
+    <p>Core contributor to phone-level speech perception in <strong>Qwen3.8-Omni-Flash-Realtime</strong>, enabling the model to recognize individual speech sounds and assess pronunciation during real-time speaking practice.</p>
+    <a href="https://qwen.ai/blog?id=qwen3.8-omni-flash">Product launch</a>
+  </section>
+  <p class="cv-advisors">Mentors · Dr. <a href="https://jxu-thu.github.io/">Jin Xu</a> and <a href="https://965694547.github.io/">Zhifang Guo</a></p>
+</section>

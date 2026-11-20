@@ -182,17 +182,17 @@ h1:before, .anchor:before {
     color: inherit;
 }
 
-.bair-entry {
+.cv-entry {
     padding: 1.6em 0;
     border-bottom: 1px solid #efefef;
 
-    .bair-header, .bair-role header {
+    .cv-header, .cv-role header {
         display: flex;
         align-items: center;
         gap: 1rem;
     }
 
-    .bair-header img {
+    .cv-header img {
         width: 64px;
         height: 64px;
         object-fit: contain;
@@ -205,13 +205,13 @@ h1:before, .anchor:before {
         color: #172538;
     }
 
-    .bair-header p, .bair-advisors, header span {
+    .cv-header p, .cv-advisors, header span {
         margin: .35em 0 0;
         color: #536274;
         font-size: .92em;
     }
 
-    .bair-role {
+    .cv-role {
         margin: 1.25em 0;
         padding-left: 1em;
         border-left: 3px solid #a4bacd;
@@ -229,7 +229,7 @@ h1:before, .anchor:before {
     }
 
     @media (max-width: 560px) {
-        .bair-header img { width: 44px; height: 44px; }
-        .bair-role header { align-items: flex-start; flex-direction: column; }
+        .cv-header img { width: 44px; height: 44px; }
+        .cv-role header { align-items: flex-start; flex-direction: column; }
     }
 }
