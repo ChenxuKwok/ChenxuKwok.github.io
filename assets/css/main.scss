@@ -172,3 +172,64 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.page__content strong {
+    color: #172538;
+    font-weight: 750;
+}
+
+.page__content a strong {
+    color: inherit;
+}
+
+.bair-entry {
+    padding: 1.6em 0;
+    border-bottom: 1px solid #efefef;
+
+    .bair-header, .bair-role header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .bair-header img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+    }
+
+    h2, h3 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: #172538;
+    }
+
+    .bair-header p, .bair-advisors, header span {
+        margin: .35em 0 0;
+        color: #536274;
+        font-size: .92em;
+    }
+
+    .bair-role {
+        margin: 1.25em 0;
+        padding-left: 1em;
+        border-left: 3px solid #a4bacd;
+
+        header {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: .15em 1em;
+        }
+
+        p {
+            margin: .55em 0;
+            line-height: 1.55;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .bair-header img { width: 44px; height: 44px; }
+        .bair-role header { align-items: flex-start; flex-direction: column; }
+    }
+}

@@ -111,23 +111,30 @@ Hangzhou Asian Games, Hangzhou, China
 </div>
 </div>
 
-<div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
-<div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/berkeley.png' alt="Berkeley logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
+<section class="bair-entry" aria-labelledby="bair-title">
+  <header class="bair-header">
+    <img src="images/berkeley.png" alt="">
+    <div>
+      <h2 id="bair-title">Berkeley Artificial Intelligence Research (BAIR)</h2>
+      <p>Berkeley Speech Group · University of California, Berkeley</p>
+    </div>
+  </header>
 
-<div class='cv-item-text' style="min-width:0;" markdown="1">
+  <section class="bair-role">
+    <header><h3>Visiting Student Researcher</h3><span>Sep – Dec 2025</span></header>
+    <p>Proposed and co-led <strong>HuPER</strong>, a framework that combines acoustic evidence with linguistic knowledge to model how people perceive speech sounds.</p>
+    <p>Trained on 100 hours of speech, HuPER achieved state-of-the-art phonetic feature error rates on five English benchmarks and transferred to 94 unseen languages without additional training.</p>
+    <a href="https://arxiv.org/abs/2602.01634">Paper</a> · <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/154021">NeurIPS 2026 poster</a> · Co-first author
+  </section>
 
-**Berkeley Artificial Intelligence Research (BAIR)**<br>
-Berkeley Speech Group, University of California, Berkeley, USA
+  <section class="bair-role">
+    <header><h3>Research Intern</h3><span>Jul 2024 – Sep 2025</span></header>
+    <p>Developed <strong>Dysfluent WFST</strong>, a zero-shot decoder that transcribes phonemes and detects speech dysfluencies in one pass. UCSF integrated it into its AI pipeline for diagnosing primary progressive aphasia.</p>
+    <a href="https://www.isca-archive.org/interspeech_2025/guo25d_interspeech.html">Interspeech 2025 oral paper</a> · First author
+  </section>
 
-Research advisors: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html) and Dr. [Jiachen Lian](https://jlian2.github.io/).
-
-**Visiting Student Researcher** · *2025.09 - 2025.12*<br>
-Proposed and co-led [HuPER](https://arxiv.org/abs/2602.01634), a framework inspired by human speech perception that combines acoustic evidence with linguistic knowledge. With 100 hours of training data, it achieved state-of-the-art phonetic error rates on five English benchmarks and transferred zero-shot to 95 unseen languages. [NeurIPS 2026 poster (co-first author)](https://neurips.cc/virtual/2026/loc/sydney/poster/154021)
-
-**Research Intern** · *2024.07 - 2025.09*<br>
-Developed Dysfluent WFST, a zero-shot decoder that transcribes phonemes and detects speech dysfluencies in the same pass. The decoder was integrated into UCSF's AI pipeline for primary progressive aphasia (PPA) diagnosis. [Interspeech 2025 oral paper (first author)](https://www.isca-archive.org/interspeech_2025/guo25d_interspeech.html)
-</div>
-</div>
+  <p class="bair-advisors">Research advisors · Prof. <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html">Gopala Krishna Anumanchipalli</a> and Dr. <a href="https://jlian2.github.io/">Jiachen Lian</a></p>
+</section>
 
 <div class='cv-item' style="display:grid;grid-template-columns:144px 1fr;gap:1.5rem;align-items:center;border-bottom:1px solid #efefef;padding:1.5em 0;">
 <div class='cv-item-logo' style="width:144px;height:144px;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src='images/qwen_logo.jpeg' alt="Qwen logo" style="width:104px;height:104px;object-fit:contain;display:block;"></div>
@@ -139,6 +146,6 @@ Developed Dysfluent WFST, a zero-shot decoder that transcribes phonemes and dete
 
 - *2026.02 - 2026.07*
 - Core contributor to phone-level speech perception in Qwen3.8-Omni-Flash-Realtime, enabling the model to recognize individual speech sounds and assess pronunciation during real-time speaking practice. [Product launch](https://qwen.ai/blog?id=qwen3.8-omni-flash)
-- Mentors: Dr. [Jin Xu](https://jxu-thu.github.io/) and Zhifang Guo.
+- Mentors: Dr. [Jin Xu](https://jxu-thu.github.io/) and [Zhifang Guo](https://965694547.github.io/).
 </div>
 </div>
