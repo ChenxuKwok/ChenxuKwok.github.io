@@ -81,7 +81,7 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 <section class="cv-entry" aria-labelledby="zju-title">
   <header class="cv-header">
-    <img src="images/zju.png" alt="">
+    <img src="images/zju.png" width="44" height="44" alt="">
     <div>
       <h2 id="zju-title"><a href="https://www.zju.edu.cn/english/">Zhejiang University</a></h2>
       <p>Hangzhou, China</p>
@@ -101,7 +101,7 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 <section class="cv-entry" aria-labelledby="asian-games-title">
   <header class="cv-header">
-    <img src="images/2022_Asian_Games_logo.svg" alt="">
+    <img src="images/2022_Asian_Games_logo.svg" width="44" height="44" alt="">
     <div>
       <h2 id="asian-games-title">Hangzhou Asian Games</h2>
       <p>Hangzhou, China</p>
@@ -116,7 +116,7 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 <section class="cv-entry" aria-labelledby="bair-title">
   <header class="cv-header">
-    <img src="images/berkeley.png" alt="">
+    <img src="images/berkeley.png" width="44" height="44" alt="">
     <div>
       <h2 id="bair-title">Berkeley Artificial Intelligence Research (BAIR)</h2>
       <p>Berkeley Speech Group · University of California, Berkeley</p>
@@ -141,7 +141,7 @@ Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, W
 
 <section class="cv-entry" aria-labelledby="qwen-title">
   <header class="cv-header">
-    <img src="images/qwen_logo.jpeg" alt="">
+    <img src="images/qwen_logo.jpeg" width="44" height="44" alt="">
     <div>
       <h2 id="qwen-title"><a href="https://qwen.ai/">Qwen Omni, Alibaba</a></h2>
       <p>Beijing, China</p>
