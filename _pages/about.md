@@ -23,8 +23,8 @@ I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2
 
 # 🔥 News
 - *2025.05*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/abs/2505.163 51'>Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection</a> is accepted by Interspeech2025!
-- *2026.01*: &nbsp;🎉🎉 My first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
-- *2026.09*: &nbsp;🎉🎉 My first-author paper <a href='https://www.arxiv.org/abs/2602.01634'>HuPER: A Human-Inspired Framework for Phonetic Perception</a> is accepted by NeurIPS 2026!
+- *2026.01*: &nbsp;🎉🎉 My co-first-author paper <a href='https://arxiv.org/pdf/2507.03043'>K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function</a> is accepted by ICASSP 2026!
+- *2026.09*: &nbsp;🎉🎉 My co-first-author paper <a href='https://www.arxiv.org/abs/2602.01634'>HuPER: A Human-Inspired Framework for Phonetic Perception</a> is accepted by NeurIPS 2026!
 
 <span class='anchor' id='publications'></span>
 
@@ -36,7 +36,7 @@ I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2
 
 [Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection](https://arxiv.org/abs/2505.16351)
 
-**Guo, C**., Lian, J., Zhou, X., Zhang, J., Li, S., Ye, Z., ... & Anumanchipalli, G. (2025).
+**Chenxu Guo**, Jiachen Lian, Xuanru Zhou, Jinming Zhang, Shuhe Li, Zongli Ye, Hwi Joo Park, Anaisha Das, Zoe Ezzes, Jet Vonk, Brittany Morin, Rian Bogley, Lisa Wauters, Zachary Miller, Maria Gorno-Tempini, and Gopala Anumanchipalli (2025).
 
 [**Repo**](https://github.com/Berkeley-Speech-Group/DysfluentWFST) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - A novel framework for zero-shot speech dysfluency transcription and detection, leveraging weighted finite-state transducers (WFST) to handle dysfluencies in speech data.
@@ -47,9 +47,10 @@ I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2
 
 <div class='paper-box-text' markdown="1">
 
-[K Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function](https://arxiv.org/pdf/2507.03043)
+[K-Function: Joint Pronunciation Transcription and Feedback for Evaluating Kids Language Function](https://arxiv.org/pdf/2507.03043)
 
-**Guo, C.**, Li, S., Lian, J., Cho, C. J., Zhao, W., Zhou, X., ... & Anumanchipalli, G. (2025)
+Shuhe Li<sup>*</sup>, **Chenxu Guo**<sup>*</sup>, Jiachen Lian, Cheol Jun Cho, Wenshuo Zhao, Xiner Xu, Ruiyu Jin, Xiaoyu Shi, Xuanru Zhou, Dingkun Zhou, Sam Wang, Grace Wang, Jingze Yang, Jingyi Xu, Ruohan Bao, Xingrui Chen, Elise Brenner, Brandon In, Francesca Pei, Maria Luisa Gorno-Tempini, and Gopala Anumanchipalli (2025).<br>
+<small>&#42; Equal contribution.</small>
 
 [**Demo**](https://chenxukwok.github.io/K-function/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - A comprehensive framework for evaluating children’s language function.
@@ -63,7 +64,8 @@ I entered <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2
 
 [HuPER: A Human-Inspired Framework for Phonetic Perception](https://www.arxiv.org/abs/2602.01634)
 
-**Guo, C.**, Lian, J., Liu, Y. S., Huang, B. H., Narayanan, S., Cho, C. J., & Anumanchipalli, G. (2026)
+**Chenxu Guo**<sup>*</sup>, Jiachen Lian<sup>*</sup>, Yisi Liu, Baihe Huang, Shriyaa Narayanan, Bixing Wu, Zoe Ezzes, Jet Vonk, Zachary Miller, Cheol Jun Cho, Maria Gorno-Tempini, and Gopala Anumanchipalli (2026).<br>
+<small>&#42; Equal contribution.</small>
 
 [**Repo**](https://github.com/HuPER29/HuPER) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - HuPER is a human-inspired, evidence-controlled multi-path framework that integrates bottom-up acoustic–phonetic modeling with explicit top-down linguistic constraints.
@@ -120,7 +122,7 @@ Berkeley Speech Group, University of California, Berkeley, USA
 Research advisors: Prof. [Gopala Krishna Anumanchipalli](https://www2.eecs.berkeley.edu/Faculty/Homepages/gopala.html) and Dr. [Jiachen Lian](https://jlian2.github.io/).
 
 **Visiting Student Researcher** · *2025.09 - 2025.12*<br>
-Proposed and co-led [HuPER](https://arxiv.org/abs/2602.01634), a framework inspired by human speech perception that combines acoustic evidence with linguistic knowledge. With 100 hours of training data, it achieved state-of-the-art phonetic error rates on five English benchmarks and transferred zero-shot to 95 unseen languages. [NeurIPS 2026 poster (first author)](https://neurips.cc/virtual/2026/loc/sydney/poster/154021)
+Proposed and co-led [HuPER](https://arxiv.org/abs/2602.01634), a framework inspired by human speech perception that combines acoustic evidence with linguistic knowledge. With 100 hours of training data, it achieved state-of-the-art phonetic error rates on five English benchmarks and transferred zero-shot to 95 unseen languages. [NeurIPS 2026 poster (co-first author)](https://neurips.cc/virtual/2026/loc/sydney/poster/154021)
 
 **Research Intern** · *2024.07 - 2025.09*<br>
 Developed Dysfluent WFST, a zero-shot decoder that transcribes phonemes and detects speech dysfluencies in the same pass. The decoder was integrated into UCSF's AI pipeline for primary progressive aphasia (PPA) diagnosis. [Interspeech 2025 oral paper (first author)](https://www.isca-archive.org/interspeech_2025/guo25d_interspeech.html)
